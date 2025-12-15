@@ -5,6 +5,7 @@ import {
   Divider,
   TextField,
   IconButton,
+  Box,
 } from "@mui/material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
@@ -23,27 +24,37 @@ export default function App({ mode, setMode }) {
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
       {/* HEADER */}
-      <Stack
-        direction="row"
-        alignItems="center"
-        justifyContent="center"
-        position="relative"
-        mb={2}
+      <Box
+        sx={{
+          position: "relative",
+          mb: 2,
+          pr: 6, // 👈 espacio reservado para el toggle
+        }}
       >
         {/* Título centrado */}
-        <Stack direction="row" spacing={1.5} alignItems="center">
+        <Stack
+          direction="row"
+          spacing={1.5}
+          alignItems="center"
+          justifyContent="center"
+        >
           <AutoStoriesIcon sx={{ fontSize: 32 }} />
           <Typography variant="h4" fontWeight={700}>
             Mis libros favoritos
           </Typography>
         </Stack>
 
-        {/* Toggle dark / light */}
+        {/* Toggle */}
         <IconButton
           onClick={() =>
             setMode(mode === "light" ? "dark" : "light")
           }
-          sx={{ position: "absolute", right: 0 }}
+          sx={{
+            position: "absolute",
+            top: "50%",
+            right: 0,
+            transform: "translateY(-50%)",
+          }}
         >
           {mode === "light" ? (
             <DarkModeIcon />
@@ -51,7 +62,7 @@ export default function App({ mode, setMode }) {
             <LightModeIcon />
           )}
         </IconButton>
-      </Stack>
+      </Box>
 
       <Typography color="text.secondary" mb={3}>
         Filtra libros por autor
@@ -71,4 +82,4 @@ export default function App({ mode, setMode }) {
       <BookList books={filteredBooks} />
     </Container>
   );
-            }
+}
