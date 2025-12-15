@@ -1,11 +1,9 @@
 export const initialBooks = [
   {
     id: 1,
-    title: "1984",
-    author: "George Orwell",
-    genre: "Distopía",
-    rating: 5,
-    image: "https://covers.openlibrary.org/b/id/7222246-L.jpg",
+    title: "El Último Secreto",
+    author: "Dan Brown",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765840460/img20250909_16353238--1-_n8kosu.jpg",
   },
   {
     id: 2,
