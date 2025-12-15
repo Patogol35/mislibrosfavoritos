@@ -13,26 +13,31 @@ export default function BookCard({ book }) {
         maxWidth: 220,
         width: "100%",
         borderRadius: 2,
-        boxShadow: 1,
+        boxShadow: 2,
         display: "flex",
         flexDirection: "column",
-        transition: "box-shadow .2s ease",
+        transition: "transform .2s ease, box-shadow .2s ease",
         "&:hover": {
-          boxShadow: 4,
+          transform: "translateY(-4px)",
+          boxShadow: 6,
         },
       }}
     >
       {/* Imagen */}
-      <Box sx={{ p: 2 }}>
+      <Box sx={{ p: 2, overflow: "hidden" }}>
         <CardMedia
           component="img"
           image={book.image}
           alt={book.title}
           sx={{
             width: "100%",
-            height: 280,        // MISMO TAMAÑO
-            objectFit: "cover", // SIN DEFORMAR
+            height: 280,
+            objectFit: "cover",
             borderRadius: 1,
+            transition: "transform .25s ease",
+            "&:hover": {
+              transform: "scale(1.05)", // hover SOLO imagen
+            },
           }}
         />
       </Box>
@@ -57,4 +62,4 @@ export default function BookCard({ book }) {
       </Stack>
     </Card>
   );
-          }
+}
