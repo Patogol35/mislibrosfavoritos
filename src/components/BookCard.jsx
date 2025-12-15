@@ -1,26 +1,60 @@
-import { Card, CardMedia, Typography, Rating, Box, Stack, } from "@mui/material";
+import {
+  Card,
+  CardMedia,
+  Typography,
+  Box,
+  Stack,
+} from "@mui/material";
 
-export default function BookCard({ book }) { return ( <Card sx={{ maxWidth: 260, mx: "auto", borderRadius: 3, overflow: "hidden", boxShadow: 4, transition: "transform .25s ease, box-shadow .25s ease", '&:hover': { transform: 'translateY(-6px)', boxShadow: 10, }, }} > {/* Imagen centrada y limpia */} <Box sx={{ display: "flex", justifyContent: "center", pt: 2 }}> <CardMedia component="img" image={book.image} alt={book.title} sx={{ width: 140, height: 210, objectFit: "cover", borderRadius: 2, }} /> </Box>
+export default function BookCard({ book }) {
+  return (
+    <Card
+      sx={{
+        maxWidth: 260,
+        mx: "auto",
+        borderRadius: 3,
+        overflow: "hidden",
+        boxShadow: 4,
+        transition: "transform .25s ease, box-shadow .25s ease",
+        "&:hover": {
+          transform: "translateY(-6px)",
+          boxShadow: 10,
+        },
+      }}
+    >
+      {/* Imagen centrada */}
+      <Box sx={{ display: "flex", justifyContent: "center", pt: 2 }}>
+        <CardMedia
+          component="img"
+          image={book.image}
+          alt={book.title}
+          sx={{
+            width: 140,
+            height: 210,
+            objectFit: "cover",
+            borderRadius: 2,
+          }}
+        />
+      </Box>
 
-{/* Contenido centrado */}
-  <Stack spacing={0.6} sx={{ p: 2, textAlign: "center" }}>
-    <Typography variant="subtitle1" fontWeight={600}>
-      {book.title}
-    </Typography>
-    <Typography variant="body2" color="text.secondary">
-      {book.author}
-    </Typography>
-    <Rating
-      value={book.rating}
-      precision={0.5}
-      readOnly
-      size="small"
-      sx={{ alignSelf: "center" }}
-    />
-    <Typography variant="caption" color="text.secondary">
-      {book.genre}
-    </Typography>
-  </Stack>
-</Card>
+      {/* Contenido */}
+      <Stack spacing={0.6} sx={{ p: 2, textAlign: "center" }}>
+        <Typography variant="subtitle1" fontWeight={600}>
+          {book.title}
+        </Typography>
 
-); }
+        <Typography variant="body2" color="text.secondary">
+          {book.author}
+        </Typography>
+
+        <Typography
+          variant="caption"
+          color="text.secondary"
+          sx={{ mt: 0.5 }}
+        >
+          {book.genre}
+        </Typography>
+      </Stack>
+    </Card>
+  );
+}
