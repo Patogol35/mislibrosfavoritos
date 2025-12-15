@@ -11,9 +11,11 @@ export default function BookCard({ book }) {
     <Card
       sx={{
         maxWidth: 220,
-        mx: "auto",
+        width: "100%",
         borderRadius: 2,
         boxShadow: 1,
+        display: "flex",
+        flexDirection: "column",
         transition: "box-shadow .2s ease",
         "&:hover": {
           boxShadow: 4,
@@ -28,8 +30,8 @@ export default function BookCard({ book }) {
           alt={book.title}
           sx={{
             width: "100%",
-            height: 280,
-            objectFit: "cover",
+            height: 280,        // MISMO TAMAÑO
+            objectFit: "cover", // SIN DEFORMAR
             borderRadius: 1,
           }}
         />
@@ -55,4 +57,4 @@ export default function BookCard({ book }) {
       </Stack>
     </Card>
   );
-}
+          }
