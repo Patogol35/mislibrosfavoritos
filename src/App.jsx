@@ -24,19 +24,13 @@ export default function App({ mode, setMode }) {
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
       {/* HEADER */}
-      <Box
-        sx={{
-          position: "relative",
-          mb: 2,
-          pr: 6, // 👈 espacio reservado para el toggle
-        }}
-      >
+      <Stack spacing={2} mb={3}>
         {/* Título centrado */}
         <Stack
           direction="row"
           spacing={1.5}
-          alignItems="center"
           justifyContent="center"
+          alignItems="center"
         >
           <AutoStoriesIcon sx={{ fontSize: 32 }} />
           <Typography variant="h4" fontWeight={700}>
@@ -44,25 +38,21 @@ export default function App({ mode, setMode }) {
           </Typography>
         </Stack>
 
-        {/* Toggle */}
-        <IconButton
-          onClick={() =>
-            setMode(mode === "light" ? "dark" : "light")
-          }
-          sx={{
-            position: "absolute",
-            top: "50%",
-            right: 0,
-            transform: "translateY(-50%)",
-          }}
-        >
-          {mode === "light" ? (
-            <DarkModeIcon />
-          ) : (
-            <LightModeIcon />
-          )}
-        </IconButton>
-      </Box>
+        {/* Toggle debajo, alineado a la derecha */}
+        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <IconButton
+            onClick={() =>
+              setMode(mode === "light" ? "dark" : "light")
+            }
+          >
+            {mode === "light" ? (
+              <DarkModeIcon />
+            ) : (
+              <LightModeIcon />
+            )}
+          </IconButton>
+        </Box>
+      </Stack>
 
       <Typography color="text.secondary" mb={3}>
         Filtra libros por autor
