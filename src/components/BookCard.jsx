@@ -1,48 +1,54 @@
-import { Card, CardContent, CardMedia, Typography, Rating, Stack, Box, Chip, } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Rating, Box, } from "@mui/material";
 
-export default function BookCard({ book }) { return ( <Card sx={{ height: "100%", display: "flex", flexDirection: "column", borderRadius: 3, boxShadow: 3, transition: "all 0.3s ease", '&:hover': { transform: 'translateY(-4px)', boxShadow: 8, }, }} > <Box sx={{ position: "relative" }}> <CardMedia
-component="img"
-height="260"
-image={book.image}
-alt={book.title}
-/>
+export default function BookCard({ book }) { return ( <Card sx={{ height: "100%", borderRadius: 4, overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.12)", transition: "transform .35s ease, box-shadow .35s ease", '&:hover': { transform: 'translateY(-6px)', boxShadow: '0 18px 45px rgba(0,0,0,0.18)', }, }} > {/* Imagen con proporción real de libro */} <Box sx={{ position: "relative", aspectRatio: "2 / 3" }}> <CardMedia component="img" image={book.image} alt={book.title} sx={{ height: "100%", objectFit: "cover", }} />
 
-{/* Género como etiqueta flotante */}
-    <Chip
-      label={book.genre}
-      size="small"
+{/* Gradiente inferior */}
+    <Box
       sx={{
         position: "absolute",
-        top: 12,
-        left: 12,
-        bgcolor: "rgba(0,0,0,0.7)",
-        color: "white",
-        fontWeight: 500,
+        inset: 0,
+        background:
+          "linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0) 70%)",
       }}
     />
-  </Box>
 
-  <CardContent sx={{ flexGrow: 1 }}>
-    <Stack spacing={1.2}>
-      <Typography variant="h6" fontWeight={600} noWrap>
+    {/* Texto sobre la imagen */}
+    <Box
+      sx={{
+        position: "absolute",
+        bottom: 0,
+        p: 2,
+        color: "white",
+      }}
+    >
+      <Typography variant="subtitle1" fontWeight={600} lineHeight={1.2}>
         {book.title}
       </Typography>
-
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        sx={{ fontStyle: "italic" }}
-      >
+      <Typography variant="caption" sx={{ opacity: 0.85 }}>
         {book.author}
       </Typography>
+    </Box>
+  </Box>
 
-      <Rating
-        value={book.rating}
-        precision={0.5}
-        readOnly
-        size="small"
-      />
-    </Stack>
+  {/* Footer limpio */}
+  <CardContent
+    sx={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      py: 1.5,
+    }}
+  >
+    <Typography variant="caption" color="text.secondary">
+      {book.genre}
+    </Typography>
+
+    <Rating
+      value={book.rating}
+      precision={0.5}
+      readOnly
+      size="small"
+    />
   </CardContent>
 </Card>
 
