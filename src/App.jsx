@@ -22,13 +22,15 @@ export default function App({ mode, setMode }) {
 
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
-      {/* Header */}
+      {/* HEADER */}
       <Stack
         direction="row"
         alignItems="center"
-        justifyContent="space-between"
+        justifyContent="center"
+        position="relative"
         mb={2}
       >
+        {/* Título centrado */}
         <Stack direction="row" spacing={1.5} alignItems="center">
           <AutoStoriesIcon sx={{ fontSize: 32 }} />
           <Typography variant="h4" fontWeight={700}>
@@ -36,11 +38,12 @@ export default function App({ mode, setMode }) {
           </Typography>
         </Stack>
 
-        {/* TOGGLE */}
+        {/* Toggle dark / light */}
         <IconButton
           onClick={() =>
             setMode(mode === "light" ? "dark" : "light")
           }
+          sx={{ position: "absolute", right: 0 }}
         >
           {mode === "light" ? (
             <DarkModeIcon />
@@ -54,7 +57,7 @@ export default function App({ mode, setMode }) {
         Filtra libros por autor
       </Typography>
 
-      {/* Filtro */}
+      {/* FILTRO */}
       <TextField
         label="Buscar por autor"
         fullWidth
@@ -68,4 +71,4 @@ export default function App({ mode, setMode }) {
       <BookList books={filteredBooks} />
     </Container>
   );
-}
+            }
