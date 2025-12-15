@@ -4,6 +4,7 @@ import {
   Typography,
   Box,
   Stack,
+  Chip,
 } from "@mui/material";
 
 export default function BookCard({ book }) {
@@ -12,18 +13,27 @@ export default function BookCard({ book }) {
       sx={{
         maxWidth: 260,
         mx: "auto",
-        borderRadius: 3,
+        borderRadius: 4,
         overflow: "hidden",
-        boxShadow: 4,
-        transition: "transform .25s ease, box-shadow .25s ease",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+        transition: "all .3s ease",
         "&:hover": {
-          transform: "translateY(-6px)",
-          boxShadow: 10,
+          transform: "translateY(-8px)",
+          boxShadow: "0 18px 40px rgba(0,0,0,0.15)",
         },
       }}
     >
       {/* Portada */}
-      <Box sx={{ display: "flex", justifyContent: "center", pt: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          pt: 3,
+          pb: 2,
+          background:
+            "linear-gradient(180deg, #f0f4ff, #ffffff)",
+        }}
+      >
         <CardMedia
           component="img"
           image={book.image}
@@ -33,20 +43,41 @@ export default function BookCard({ book }) {
             height: 210,
             objectFit: "cover",
             borderRadius: 2,
+            boxShadow: 4,
           }}
         />
       </Box>
 
       {/* Texto */}
-      <Stack spacing={0.6} sx={{ p: 2, textAlign: "center" }}>
-        <Typography variant="subtitle1" fontWeight={600}>
+      <Stack spacing={0.8} sx={{ p: 2.5, textAlign: "center" }}>
+        <Typography
+          variant="subtitle1"
+          fontWeight={700}
+          lineHeight={1.3}
+        >
           {book.title}
         </Typography>
 
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          color="text.secondary"
+        >
           {book.author}
         </Typography>
+
+        {/* Extra opcional */}
+        {book.category && (
+          <Chip
+            label={book.category}
+            size="small"
+            sx={{
+              mt: 1,
+              alignSelf: "center",
+              fontWeight: 500,
+            }}
+          />
+        )}
       </Stack>
     </Card>
   );
-}
+          }
