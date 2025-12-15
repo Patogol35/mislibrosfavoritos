@@ -9,11 +9,9 @@ export const initialBooks = [
   },
   {
     id: 2,
-    title: "El Principito",
-    author: "Antoine de Saint-Exupéry",
-    genre: "Fantasía",
-    rating: 5,
-    image: "https://covers.openlibrary.org/b/id/9255566-L.jpg",
+    title: "Macara: Memorias de una Bandita Enfermedad",
+    author: "Jefferson Pérez Aguachela",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765839617/62650_rkkxmf.jpg",
   },
   {
     id: 3,
@@ -29,6 +27,6 @@ export const initialBooks = [
     author: "Dan Brown",
     genre: "Thriller",
     rating: 4,
-    image: "https://covers.openlibrary.org/b/id/8231991-L.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765839418/images_yxpt4i.jpg",
   },
 ];
