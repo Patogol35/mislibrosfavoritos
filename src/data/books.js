@@ -13,7 +13,7 @@ export const initialBooks = [
     title: "Macara: Memorias de una Bandita Enfermedad",
     author: "Jefferson Pérez Aguachela",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765839617/62650_rkkxmf.jpg",
-    status: "reading", // en proceso
+    status: "read", // en proceso
   },
   {
     id: 3,
@@ -33,21 +33,21 @@ export const initialBooks = [
     id: 5,
     title: "Origen",
     author: "Dan Brown",
-    image: "https://covers.openlibrary.org/b/id/9255896-L.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896359/17195ac0d7401a2385e6a74bf26765d9_v731zc.jpg",
     status: "read", // no leído
   },
   {
     id: 6,
     title: "El Kybalion",
     author: "Tres Iniciados",
-    image: "https://covers.openlibrary.org/b/id/10523357-L.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896359/ca716ba2f89b018f2f93bb2916bfc792_uryikq.jpg",
     status: "read",
   },
   {
     id: 7,
     title: "El Corán",
     author: "Anónimo",
-    image: "https://covers.openlibrary.org/b/id/8231851-L.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896359/fractales-el-coran_zj1ct9.png",
     status: "reading",
   },
 ];
