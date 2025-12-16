@@ -48,12 +48,14 @@ export const initialBooks = [
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896359/fractales-el-coran_zj1ct9.png",
     status: "reading",
   },
-];
 
-{
+  {
     id: 8,
     title: "Inferno",
     author: "Dan Brown",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896822/a75e95dfdd11cbba5efe4b66a08743fc_pb6xik.jpg",
     status: "unread", // en proceso
   },
+];
+
+
