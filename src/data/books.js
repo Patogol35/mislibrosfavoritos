@@ -56,6 +56,15 @@ export const initialBooks = [
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896822/a75e95dfdd11cbba5efe4b66a08743fc_pb6xik.jpg",
     status: "unread", // en proceso
   },
+
+  
+  {
+    id: 9,
+    title: "Ángeles y Demonios",
+    author: "Dan Brown",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765901509/951cc489068b333ad760996628e8ee01_nmearx.jpg",
+    status: "read", // en proceso
+  },
 ];
 
 
