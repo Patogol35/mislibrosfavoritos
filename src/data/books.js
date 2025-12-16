@@ -27,4 +27,28 @@ export const initialBooks = [
     rating: 4,
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765839418/images_yxpt4i.jpg",
   },
+  {
+    id: 5,
+    title: "El Origen",
+    author: "Dan Brown",
+    genre: "Thriller",
+    rating: 4,
+    image: "https://covers.openlibrary.org/b/id/9255896-L.jpg",
+  },
+  {
+    id: 6,
+    title: "El Kybalion",
+    author: "Tres Iniciados",
+    genre: "Filosofía",
+    rating: 5,
+    image: "https://covers.openlibrary.org/b/id/10523357-L.jpg",
+  },
+  {
+    id: 7,
+    title: "El Corán",
+    author: "Anónimo",
+    genre: "Religión",
+    rating: 5,
+    image: "https://covers.openlibrary.org/b/id/8231851-L.jpg",
+  },
 ];
