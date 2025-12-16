@@ -3,24 +3,16 @@ import {
   Typography,
   Stack,
   Divider,
-  TextField,
   IconButton,
   Box,
 } from "@mui/material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import { useState } from "react";
 import BookList from "./components/BookList";
 import { initialBooks } from "./data/books";
 
 export default function App({ mode, setMode }) {
-  const [filter, setFilter] = useState("");
-
-  const filteredBooks = initialBooks.filter((book) =>
-    book.author.toLowerCase().includes(filter.toLowerCase())
-  );
-
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
       {/* HEADER */}
@@ -38,38 +30,31 @@ export default function App({ mode, setMode }) {
           </Typography>
         </Stack>
 
-        {/* Toggle debajo, alineado a la derecha */}
+        {/* Toggle de tema */}
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
           <IconButton
             onClick={() =>
               setMode(mode === "light" ? "dark" : "light")
             }
           >
-            {mode === "light" ? (
-              <DarkModeIcon />
-            ) : (
-              <LightModeIcon />
-            )}
+            {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
           </IconButton>
         </Box>
       </Stack>
 
-      <Typography color="text.secondary" mb={3}>
-        Filtra libros por autor
+      {/* DESCRIPCIÓN */}
+      <Typography
+        color="text.secondary"
+        mb={4}
+        sx={{ maxWidth: 600 }}
+      >
+        Esta es mi colección de libros favoritos: algunos ya los he leído,
+        otros están en proceso y algunos aún están pendientes por leer.
       </Typography>
-
-      {/* FILTRO */}
-      <TextField
-        label="Buscar por autor"
-        fullWidth
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
-        sx={{ maxWidth: 360, mb: 4 }}
-      />
 
       <Divider sx={{ mb: 4 }} />
 
-      <BookList books={filteredBooks} />
+      <BookList books={initialBooks} />
     </Container>
   );
 }
