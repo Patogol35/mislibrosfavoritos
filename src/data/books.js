@@ -1,5 +1,3 @@
-// src/data/books.js
-
 export const initialBooks = [
   {
     id: 1,
@@ -51,3 +49,11 @@ export const initialBooks = [
     status: "reading",
   },
 ];
+
+{
+    id: 8,
+    title: "Inferno",
+    author: "Dan Brown",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896822/a75e95dfdd11cbba5efe4b66a08743fc_pb6xik.jpg",
+    status: "unread", // en proceso
+  },
