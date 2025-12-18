@@ -6,6 +6,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+import { useEffect } from "react";
 
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -17,6 +18,11 @@ import { initialBooks } from "./data/books";
 export default function App({ mode, setMode }) {
   const theme = useTheme();
 
+  // 🔥 CONEXIÓN REAL DEL MODO CON EL BODY
+  useEffect(() => {
+    document.body.className = mode;
+  }, [mode]);
+
   return (
     <Container
       maxWidth="lg"
@@ -24,9 +30,9 @@ export default function App({ mode, setMode }) {
       sx={{ pt: 10, pb: 14, position: "relative" }}
     >
       {/* SÍMBOLOS */}
-<div className="sigil sigil-circle" />
-<div className="sigil sigil-triangle" />
-<div className="sigil sigil-star">✶</div>
+      <div className="sigil sigil-circle" />
+      <div className="sigil sigil-triangle" />
+      <div className="sigil sigil-star">✶</div>
 
       {/* HEADER */}
       <Stack spacing={4} mb={8} alignItems="center">
@@ -55,7 +61,7 @@ export default function App({ mode, setMode }) {
         </Typography>
       </Stack>
 
-      {/* BOTÓN */}
+      {/* BOTÓN MODO */}
       <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
         <IconButton
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -95,8 +101,8 @@ export default function App({ mode, setMode }) {
           mb: 6,
         }}
       >
-Aquí comparto algunos de mis libros favoritos: algunos ya los he leído, otros los estoy leyendo y otros pienso leerlos próximamente.
-      
+        Aquí comparto algunos de mis libros favoritos: algunos ya los he leído,
+        otros los estoy leyendo y otros pienso leerlos próximamente.
       </Typography>
 
       <div className="divider" />
@@ -104,4 +110,4 @@ Aquí comparto algunos de mis libros favoritos: algunos ya los he leído, otros 
       <BookList books={initialBooks} />
     </Container>
   );
-}
+    }
