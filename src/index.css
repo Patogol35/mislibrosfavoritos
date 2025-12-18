@@ -30,7 +30,7 @@ body {
   background:
     radial-gradient(
       circle at top,
-      rgba(107, 15, 15, 0.75),
+      rgba(107, 15, 15, 0.8),
       var(--black) 70%
     ),
     repeating-linear-gradient(
@@ -46,6 +46,94 @@ body {
 }
 
 /* =========================
+CONTENEDOR MANUSCRITO
+========================= */
+.container-paper {
+  position: relative;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(201, 162, 77, 0.3);
+  box-shadow:
+    inset 0 0 140px rgba(0, 0, 0, 0.7),
+    0 0 60px rgba(0, 0, 0, 0.6);
+  overflow: visible; /* 👈 CLAVE */
+}
+
+/* =========================
+ANIMACIÓN REVELACIÓN
+========================= */
+.reveal {
+  animation: revealFade 1.4s ease forwards;
+}
+
+@keyframes revealFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+SÍMBOLOS OCULTOS (AHORA SÍ)
+========================= */
+.sigil {
+  position: absolute;
+  z-index: 0; /* detrás del contenido */
+  opacity: 0.12; /* MÁS visible */
+  pointer-events: none;
+  animation: sigilFloat 18s ease-in-out infinite;
+}
+
+/* CÍRCULO */
+.sigil-circle {
+  width: 320px;
+  height: 320px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  top: 80px;
+  left: -120px;
+}
+
+/* TRIÁNGULO */
+.sigil-triangle {
+  width: 0;
+  height: 0;
+  border-left: 180px solid transparent;
+  border-right: 180px solid transparent;
+  border-bottom: 300px solid var(--gold);
+  bottom: 120px;
+  right: -160px;
+}
+
+/* SIGILO CENTRAL */
+.sigil-key::before {
+  content: "✶";
+  position: absolute;
+  font-size: 260px;
+  color: var(--gold);
+  opacity: 0.08;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* FLOTACIÓN */
+@keyframes sigilFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =========================
 SEPARADOR
 ========================= */
 .divider {
@@ -58,107 +146,5 @@ SEPARADOR
     var(--gold),
     transparent
   );
-  position: relative;
-}
-
-.divider::after {
-  content: "✦";
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--gold);
-}
-
-/* =========================
-CONTENEDOR MANUSCRITO
-========================= */
-.container-paper {
-  position: relative;
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(201, 162, 77, 0.25);
-  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-}
-
-/* =========================
-REVELACIÓN
-========================= */
-.reveal {
-  animation: reveal 1.6s ease forwards;
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* =========================
-SÍMBOLOS (FIX REAL)
-========================= */
-.sigil {
-  position: absolute;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.14;
-  animation: floatSigil 22s ease-in-out infinite;
-  mix-blend-mode: screen;
-}
-
-/* CÍRCULO */
-.sigil-circle {
-  width: 300px;
-  height: 300px;
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  top: 8%;
-  left: -100px;
-}
-
-/* TRIÁNGULO */
-.sigil-triangle {
-  width: 0;
-  height: 0;
-  border-left: 160px solid transparent;
-  border-right: 160px solid transparent;
-  border-bottom: 280px solid var(--gold);
-  top: 55%;
-  right: -140px;
-}
-
-/* SIGILO CENTRAL */
-.sigil-key {
-  width: 300px;
-  height: 300px;
-  bottom: -120px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.sigil-key::before {
-  content: "✶";
-  position: absolute;
-  inset: 0;
-  font-size: 260px;
-  color: var(--gold);
-  text-align: center;
-}
-
-/* MOVIMIENTO */
-@keyframes floatSigil {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(4deg);
-  }
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
+  box-shadow: 0 0 14px rgba(201, 162, 77, 0.4);
 }
