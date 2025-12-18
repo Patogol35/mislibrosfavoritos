@@ -1,22 +1,14 @@
-import React, { useMemo, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import {
-  ThemeProvider,
-  CssBaseline,
-} from "@mui/material";
-import { createTheme } from "@mui/material/styles";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import getTheme from "./theme";
 
-function Main() {
-  const [mode, setMode] = useState("light");
+function Root() {
+  const [mode, setMode] = React.useState("dark");
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
+  const theme = React.useMemo(
+    () => getTheme(mode),
     [mode]
   );
 
@@ -29,7 +21,5 @@ function Main() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <Main />
-  </React.StrictMode>
+  <Root />
 );
