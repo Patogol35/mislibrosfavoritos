@@ -4,14 +4,14 @@ FUENTES
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@400;500&display=swap');
 
 /* =========================
-RESET / BLINDAJE
+RESET
 ========================= */
 html,
 body {
   margin: 0;
   padding: 0;
   max-width: 100%;
-  overflow-x: hidden; /* 🔥 CLAVE ABSOLUTA */
+  overflow-x: hidden;
 }
 
 /* =========================
@@ -30,9 +30,9 @@ VARIABLES
 }
 
 /* =========================
-BODY – FONDO ANTIGUO
+MODO OSCURO – DAN BROWN
 ========================= */
-body {
+body.dark {
   min-height: 100vh;
   background:
     radial-gradient(circle at top, rgba(107, 15, 15, 0.8), var(--black) 70%),
@@ -48,20 +48,47 @@ body {
 }
 
 /* =========================
+MODO CLARO – PERGAMINO
+========================= */
+body.light {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 248, 230, 0.96), #e6dcc4 70%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(120, 90, 40, 0.035),
+      rgba(120, 90, 40, 0.035) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+  background-attachment: fixed;
+}
+
+/* =========================
 CONTENEDOR MANUSCRITO
 ========================= */
 .container-paper {
   position: relative;
-  background: rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(201, 162, 77, 0.35);
+  padding-left: 24px;
+  padding-right: 24px;
+  overflow-x: hidden;
+}
+
+/* OSCURO */
+body.dark .container-paper {
+  background: rgba(0, 0, 0, 0.45);
   box-shadow:
     inset 0 0 180px rgba(0, 0, 0, 0.85),
     0 0 60px rgba(0, 0, 0, 0.6);
-  padding-left: 24px;
-  padding-right: 24px;
+}
 
-  overflow-y: visible;
-  overflow-x: hidden; /* 🔥 SOLUCIÓN */
+/* PERGAMINO */
+body.light .container-paper {
+  background: rgba(255, 248, 230, 0.88);
+  box-shadow:
+    inset 0 0 140px rgba(120, 90, 40, 0.25),
+    0 0 50px rgba(120, 90, 40, 0.35);
 }
 
 /* =========================
@@ -93,7 +120,6 @@ SÍMBOLOS
   animation: sigilFloat 20s ease-in-out infinite;
 }
 
-/* CÍRCULO */
 .sigil-circle {
   width: 260px;
   height: 260px;
@@ -103,7 +129,6 @@ SÍMBOLOS
   left: -80px;
 }
 
-/* TRIÁNGULO */
 .sigil-triangle {
   width: 0;
   height: 0;
@@ -114,7 +139,6 @@ SÍMBOLOS
   right: -100px;
 }
 
-/* ⭐ SIGILO CENTRAL */
 .sigil-star {
   font-size: 220px;
   color: var(--gold);
@@ -123,9 +147,6 @@ SÍMBOLOS
   right: -90px;
 }
 
-/* =========================
-MOVIMIENTO
-========================= */
 @keyframes sigilFloat {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -152,16 +173,4 @@ DIVIDER
     transparent
   );
   box-shadow: 0 0 18px rgba(201, 162, 77, 0.6);
-}
-
-/* =========================
-TEXTO REVELADO
-========================= */
-.reveal-text {
-  position: relative;
-  z-index: 2;
-}
-
-.reveal-text span {
-  transition: opacity 0.3s ease;
 }
