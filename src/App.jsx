@@ -95,8 +95,8 @@ export default function App({ mode, setMode }) {
           mb: 6,
         }}
       >
-        Una colección de libros que revelan símbolos, historia oculta y
-        secretos que aguardan ser descifrados.
+Aquí comparto algunos de mis libros favoritos: algunos ya los he leído, otros los estoy leyendo y otros pienso leerlos próximamente.
+      
       </Typography>
 
       <div className="divider" />
