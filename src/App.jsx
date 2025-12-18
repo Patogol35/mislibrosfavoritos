@@ -1,6 +1,7 @@
 import {
   Container,
   Typography,
+  Stack,
   IconButton,
   Box,
 } from "@mui/material";
@@ -15,35 +16,53 @@ import { initialBooks } from "./data/books";
 export default function App({ mode, setMode }) {
   return (
     <Container maxWidth="lg">
+      {/* HEADER */}
+      <Stack spacing={4} mb={6}>
+        <Stack
+          direction="row"
+          spacing={2}
+          justifyContent="center"
+          alignItems="center"
+          sx={{ flexWrap: "wrap" }}
+        >
+          <AutoStoriesIcon
+            sx={{ fontSize: 36, color: "primary.main" }}
+          />
 
-      {/* ICONO */}
-      <Box sx={{ textAlign: "center", mt: 5 }}>
-        <AutoStoriesIcon
-          sx={{ fontSize: 40, color: "primary.main" }}
-        />
-      </Box>
+          <Typography
+            color="primary"
+            sx={{
+              textAlign: "center",
+              fontSize: {
+                xs: "1.25rem",
+                sm: "1.6rem",
+                md: "2rem",
+              },
+              lineHeight: 1.3,
+              fontWeight: 600,
+            }}
+          >
+            Libros favoritos de Jorge Patricio Santamaría Cherrez
+          </Typography>
+        </Stack>
 
-      {/* TITULO */}
-      <Typography
-        sx={{
-          textAlign: "center",
-          mt: 2,
-          mb: 1,
-          fontSize: {
-            xs: "1.25rem",
-            sm: "1.6rem",
-            md: "2rem",
-          },
-          fontWeight: 600,
-        }}
-      >
-        Libros favoritos de Jorge Patricio Santamaría Cherrez
-      </Typography>
+        {/* Toggle claro / oscuro */}
+        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <IconButton
+            onClick={() =>
+              setMode(mode === "light" ? "dark" : "light")
+            }
+            color="primary"
+          >
+            {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+          </IconButton>
+        </Box>
+      </Stack>
 
-      {/* 👇 LA LINEA (AQUI SI SE VE) */}
+      {/* 👇 TU SEPARADOR ORIGINAL */}
       <div className="divider" />
 
-      {/* DESCRIPCION */}
+      {/* DESCRIPCIÓN */}
       <Typography
         color="text.secondary"
         sx={{
@@ -56,16 +75,6 @@ export default function App({ mode, setMode }) {
         Esta es mi colección de libros favoritos: algunos ya los he leído,
         otros están en proceso y algunos aún están pendientes por leer.
       </Typography>
-
-      {/* TOGGLE */}
-      <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
-        <IconButton
-          onClick={() => setMode(mode === "light" ? "dark" : "light")}
-          color="primary"
-        >
-          {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
-        </IconButton>
-      </Box>
 
       <BookList books={initialBooks} />
     </Container>
