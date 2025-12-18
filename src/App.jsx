@@ -1,4 +1,4 @@
-import {
+  import {
   Container,
   Typography,
   Stack,
@@ -22,74 +22,36 @@ export default function App({ mode, setMode }) {
       className="container-paper reveal"
       sx={{ pt: 8, pb: 12 }}
     >
-      {/* SÍMBOLOS OCULTOS */}
+      {/* SÍMBOLOS */}
       <div className="sigil sigil-circle" />
       <div className="sigil sigil-triangle" />
       <div className="sigil sigil-key" />
 
       {/* HEADER */}
-      <Stack spacing={3} mb={8} alignItems="center">
-        <AutoStoriesIcon
-          sx={{
-            fontSize: 60,
-            color: "var(--gold)",
-            filter: "drop-shadow(0 0 12px rgba(201,162,77,0.8))",
-          }}
-        />
+      <Stack spacing={3} mb={8} alignItems="center" sx={{ position: "relative", zIndex: 2 }}>
+        <AutoStoriesIcon sx={{ fontSize: 60, color: "var(--gold)" }} />
 
         <Typography
           sx={{
-            textAlign: "center",
-            fontSize: {
-              xs: "1.6rem",
-              sm: "2.3rem",
-              md: "2.9rem",
-            },
-            fontWeight: 600,
+            fontFamily: "'Cinzel', serif",
             letterSpacing: "0.35em",
             color: "var(--gold-soft)",
-            fontFamily: "'Cinzel', serif",
             textTransform: "uppercase",
+            fontSize: { xs: "1.6rem", md: "2.8rem" },
           }}
         >
           Biblioteca Personal
         </Typography>
 
-        <Typography
-          sx={{
-            textAlign: "center",
-            fontSize: "0.9rem",
-            letterSpacing: "0.28em",
-            color: "rgba(230,207,139,0.75)",
-            textTransform: "uppercase",
-          }}
-        >
+        <Typography sx={{ letterSpacing: "0.25em", opacity: 0.8 }}>
           Jorge Patricio Santamaría Cherrez
         </Typography>
       </Stack>
 
-      {/* BOTÓN SECRETO */}
-      <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
-        <IconButton
-          onClick={() => setMode(mode === "light" ? "dark" : "light")}
-          sx={{
-            border: "1px solid rgba(201,162,77,0.4)",
-            borderRadius: "50%",
-            p: 1.5,
-          }}
-        >
-          <VisibilityIcon
-            sx={{
-              color: "var(--gold)",
-              filter: "drop-shadow(0 0 8px rgba(201,162,77,0.7))",
-              transition: "transform 0.4s ease, opacity 0.4s ease",
-              opacity: 0.85,
-              "&:hover": {
-                transform: "rotate(15deg) scale(1.2)",
-                opacity: 1,
-              },
-            }}
-          />
+      {/* BOTÓN */}
+      <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4, zIndex: 2, position: "relative" }}>
+        <IconButton onClick={() => setMode(mode === "light" ? "dark" : "light")}>
+          <VisibilityIcon sx={{ color: "var(--gold)" }} />
         </IconButton>
       </Box>
 
@@ -99,23 +61,14 @@ export default function App({ mode, setMode }) {
           maxWidth: 680,
           mx: "auto",
           textAlign: "center",
-          fontSize: {
-            xs: "1.05rem",
-            sm: "1.15rem",
-            md: "1.25rem",
-          },
-          lineHeight: 2,
-          letterSpacing: "0.06em",
           fontStyle: "italic",
-          color:
-            theme.palette.mode === "dark"
-              ? "rgba(245,245,245,0.88)"
-              : "rgba(40,40,40,0.85)",
+          letterSpacing: "0.05em",
+          position: "relative",
+          zIndex: 2,
         }}
-        mb={6}
       >
-        Una colección de libros que revelan símbolos, conspiraciones,
-        historia oculta y secretos que aguardan ser descifrados.
+        Una colección de libros que revelan símbolos, historia oculta y
+        secretos antiguos.
       </Typography>
 
       <div className="divider" />
