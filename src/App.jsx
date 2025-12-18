@@ -27,7 +27,7 @@ export default function App({ mode, setMode }) {
             sx={{ fontSize: 36, color: "primary.main" }}
           />
           <Typography variant="h4" color="primary">
-            Mis libros favoritos
+            Libros favoritos de Jorge Patricio Santamaría Cherrez
           </Typography>
         </Stack>
 
