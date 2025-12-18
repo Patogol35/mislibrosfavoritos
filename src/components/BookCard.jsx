@@ -40,33 +40,43 @@ export default function BookCard({ book }) {
   return (
     <Card
       sx={{
-        maxWidth: 220,
+        maxWidth: 230,
         width: "100%",
-        borderRadius: 2,
-        boxShadow: 2,
+        borderRadius: 3,
+        background:
+          "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.4))",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+        border: "1px solid rgba(201,162,77,0.25)",
         display: "flex",
         flexDirection: "column",
-        transition: "transform .2s ease, box-shadow .2s ease",
+        transition: "all .35s ease",
         "&:hover": {
-          transform: "translateY(-4px)",
-          boxShadow: 6,
+          transform: "translateY(-8px)",
+          boxShadow: "0 20px 45px rgba(0,0,0,0.8)",
         },
       }}
     >
       {/* Imagen */}
-      <Box sx={{ p: 2, overflow: "hidden" }}>
+      <Box
+        sx={{
+          p: 2,
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
         <CardMedia
           component="img"
           image={book.image}
           alt={book.title}
           sx={{
             width: "100%",
-            height: 280,
+            height: 290,
             objectFit: "cover",
-            borderRadius: 1,
-            transition: "transform .25s ease",
+            borderRadius: 2,
+            transition: "transform .4s ease",
+            filter: "contrast(1.05) sepia(0.2)",
             "&:hover": {
-              transform: "scale(1.05)",
+              transform: "scale(1.08)",
             },
           }}
         />
@@ -74,11 +84,24 @@ export default function BookCard({ book }) {
 
       {/* Texto */}
       <Stack spacing={0.8} sx={{ px: 2, pb: 2 }}>
-        <Typography variant="subtitle1" fontWeight={600} noWrap>
+        <Typography
+          variant="subtitle1"
+          fontWeight={600}
+          noWrap
+          sx={{
+            fontFamily: "'Cinzel', serif",
+            letterSpacing: "0.08em",
+          }}
+        >
           {book.title}
         </Typography>
 
-        <Typography variant="body2" color="text.secondary" noWrap>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          noWrap
+          sx={{ fontStyle: "italic" }}
+        >
           {book.author}
         </Typography>
 
@@ -90,8 +113,8 @@ export default function BookCard({ book }) {
           color={status.color}
           sx={{
             width: "fit-content",
+            mt: 1,
 
-            /* Animaciones SOLO con MUI */
             "@keyframes pulse": {
               "0%": { opacity: 1 },
               "50%": { opacity: 0.55 },
@@ -116,4 +139,4 @@ export default function BookCard({ book }) {
       </Stack>
     </Card>
   );
-}
+        }
