@@ -73,7 +73,7 @@ export const initialBooks = [
     id: 11,
     title: "El Triángulo de las Bermudas",
     author: "Charles Berlitz",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766030433/5b6a026d03a9d1e7c809342f8ec60094_cpvgqd.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766100218/4771417_wrktx8.jpg",
     status: "unread",
   },
   {
@@ -81,6 +81,6 @@ export const initialBooks = [
     title: "Solo para tus ojos",
     author: "J. J. Benítez",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766030561/dd56ff55ef5963add5e7c287b354852d_iz7orl.jpg",
-    status: "reading",
+    status: "unread",
   },
 ];
