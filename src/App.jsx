@@ -29,12 +29,11 @@ export default function App({ mode, setMode }) {
 
       {/* TITULO */}
       <Typography
+        className="app-title"
         sx={{
           textAlign: "center",
           mt: 2,
           mb: 1,
-          fontFamily: "'Cinzel', serif",
-          letterSpacing: "0.15em",
           color: "primary.main",
           fontSize: {
             xs: "1.25rem",
@@ -47,11 +46,12 @@ export default function App({ mode, setMode }) {
         Libros favoritos de Jorge Patricio Santamaría Cherrez
       </Typography>
 
-      {/* LINEA (AQUI SIEMPRE SE VE) */}
+      {/* LINEA */}
       <div className="divider" />
 
       {/* DESCRIPCION */}
       <Typography
+        className="app-text"
         color="text.secondary"
         sx={{
           maxWidth: 620,
@@ -75,7 +75,7 @@ export default function App({ mode, setMode }) {
         </IconButton>
       </Box>
 
-      {/* LISTA DE LIBROS */}
+      {/* LISTA */}
       <BookList books={initialBooks} />
     </Container>
   );
