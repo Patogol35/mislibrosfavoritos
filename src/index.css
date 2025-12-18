@@ -9,13 +9,11 @@ VARIABLES
 :root {
   --black: #050505;
   --dark-red: #6b0f0f;
-  --deep-red: #3a0707;
   --gold: #c9a24d;
   --gold-soft: #e6cf8b;
   --text-light: #f2f2f2;
 
   font-family: 'Cormorant Garamond', serif;
-  line-height: 1.7;
 }
 
 /* =========================
@@ -24,49 +22,27 @@ BODY
 body {
   margin: 0;
   min-height: 100vh;
-
   background:
-    radial-gradient(circle at top, rgba(107,15,15,0.75), var(--black) 70%),
+    radial-gradient(circle at top, rgba(107,15,15,.75), var(--black) 70%),
     repeating-linear-gradient(
       45deg,
-      rgba(255,255,255,0.02),
-      rgba(255,255,255,0.02) 1px,
+      rgba(255,255,255,.015),
+      rgba(255,255,255,.015) 1px,
       transparent 1px,
-      transparent 6px
+      transparent 7px
     );
-
   background-attachment: fixed;
   color: var(--text-light);
 }
 
 /* =========================
-SEPARADOR
-========================= */
-.divider {
-  width: 180px;
-  height: 2px;
-  margin: 56px auto;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
-  position: relative;
-}
-
-.divider::after {
-  content: "✦";
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--gold);
-}
-
-/* =========================
-CONTENEDOR MANUSCRITO
+CONTENEDOR
 ========================= */
 .container-paper {
   position: relative;
-  background: rgba(0,0,0,0.45);
-  border: 1px solid rgba(201,162,77,0.3);
-  box-shadow: inset 0 0 160px rgba(0,0,0,0.7);
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(201,162,77,.25);
+  box-shadow: inset 0 0 160px rgba(0,0,0,.7);
   overflow: hidden;
 }
 
@@ -78,71 +54,85 @@ REVELACIÓN
 }
 
 @keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity:0; transform:translateY(40px); }
+  to { opacity:1; transform:none; }
 }
 
 /* =========================
-SÍMBOLOS OCULTOS (VISIBLES)
+SÍMBOLOS
 ========================= */
 .sigil {
   position: absolute;
-  z-index: 1;
+  opacity: .07;
   pointer-events: none;
-  opacity: 0.12;
-  animation: float 18s ease-in-out infinite;
+  animation: float 22s ease-in-out infinite;
 }
 
 /* CÍRCULO */
 .sigil-circle {
-  width: 260px;
-  height: 260px;
+  width: 300px;
+  height: 300px;
   border: 2px solid var(--gold);
   border-radius: 50%;
   top: 8%;
-  left: -80px;
+  left: -120px;
 }
 
 /* TRIÁNGULO */
 .sigil-triangle {
   width: 0;
   height: 0;
-  border-left: 140px solid transparent;
-  border-right: 140px solid transparent;
-  border-bottom: 240px solid var(--gold);
-  top: 52%;
-  right: -120px;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 260px solid var(--gold);
+  top: 50%;
+  right: -140px;
 }
 
-/* ESTRELLA */
-.sigil-star::before {
-  content: "✶";
-  position: absolute;
-  font-size: 200px;
+/* SIGILO CENTRAL */
+.sigil-star {
+  font-size: 260px;
   color: var(--gold);
-  bottom: -40px;
+  bottom: -80px;
   left: 50%;
   transform: translateX(-50%);
-}
-
-/* CRUZ */
-.sigil-cross::before {
-  content: "✚";
   position: absolute;
-  font-size: 160px;
-  color: var(--gold);
-  top: 20%;
-  right: 20%;
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-16px); }
-  100% { transform: translateY(0); }
+  0% { transform:translateY(0); }
+  50% { transform:translateY(-20px); }
+  100% { transform:translateY(0); }
+}
+
+/* =========================
+TÍTULO
+========================= */
+.title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  text-align: center;
+}
+
+/* =========================
+TEXTO ANIMADO
+========================= */
+.reveal-text span {
+  opacity: 0;
+  display: inline-block;
+  animation: letter 0.6s forwards;
+}
+
+@keyframes letter {
+  to { opacity:1; transform:none; }
+}
+
+/* =========================
+HOVER MÍSTICO
+========================= */
+.mystic-hover:hover {
+  text-shadow: 0 0 12px rgba(201,162,77,.6);
+  color: var(--gold-soft);
 }
