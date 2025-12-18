@@ -2,6 +2,7 @@ import {
   Container,
   Typography,
   Stack,
+  Divider,
   IconButton,
   Box,
 } from "@mui/material";
@@ -17,21 +18,20 @@ export default function App({ mode, setMode }) {
   return (
     <Container maxWidth="lg">
       {/* HEADER */}
-      <Stack spacing={4} mb={6} mt={6}>
+      <Stack spacing={4} mb={6}>
         <Stack
           direction="row"
           spacing={2}
           justifyContent="center"
           alignItems="center"
-          sx={{ flexWrap: "wrap" }}
+          sx={{ flexWrap: "wrap" }}   // mejora en móvil
         >
           <AutoStoriesIcon
             sx={{ fontSize: 36, color: "primary.main" }}
           />
 
-          {/* 👇 H1 REAL (tu CSS vuelve a aplicar) */}
           <Typography
-            component="h1"
+            color="primary"
             sx={{
               textAlign: "center",
               fontSize: {
@@ -39,6 +39,8 @@ export default function App({ mode, setMode }) {
                 sm: "1.6rem",
                 md: "2rem",
               },
+              lineHeight: 1.3,
+              fontWeight: 600,
             }}
           >
             Libros favoritos de Jorge Patricio Santamaría Cherrez
@@ -58,17 +60,25 @@ export default function App({ mode, setMode }) {
         </Box>
       </Stack>
 
-      {/* 👇 TU SEPARADOR ORIGINAL */}
-      <div className="divider" />
+      {/* 👇 MISMO DIVIDER, SOLO ARREGLADO */}
+      <Divider
+        sx={{
+          width: 120,
+          mx: "auto",
+          mb: 6,
+          borderColor: "#c9a24d", // MISMO ORO DE TU CSS
+          borderBottomWidth: 1.5, // un poco más visible
+          opacity: 0.9,
+        }}
+      />
 
       {/* DESCRIPCIÓN */}
       <Typography
-        component="p"
+        color="text.secondary"
         sx={{
           maxWidth: 600,
           mx: "auto",
           textAlign: "center",
-          color: "text.secondary",
         }}
         mb={6}
       >
