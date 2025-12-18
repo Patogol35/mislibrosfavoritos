@@ -6,13 +6,9 @@ export default function AnimatedTitle({ text }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisibleCount((prev) => {
-        if (prev >= text.length) {
-          clearInterval(interval);
-          return prev;
-        }
-        return prev + 1;
-      });
+      setVisibleCount((prev) =>
+        prev < text.length ? prev + 1 : prev
+      );
     }, 70);
 
     return () => clearInterval(interval);
@@ -28,12 +24,21 @@ export default function AnimatedTitle({ text }) {
         letterSpacing: "0.35em",
         color: "var(--gold-soft)",
         textTransform: "uppercase",
-        zIndex: 1,
+        zIndex: 2,
+        position: "relative",
+        cursor: "default",
+        "& span": {
+          transition: "opacity 0.4s ease",
+        },
+        "&:hover span": {
+          color: "var(--gold)",
+          textShadow: "0 0 12px rgba(201,162,77,0.8)",
+        },
       }}
     >
       {text.split("").map((char, i) => (
         <span key={i} style={{ opacity: i < visibleCount ? 1 : 0 }}>
-          {char}
+          {char === " " ? "\u00A0" : char}
         </span>
       ))}
     </Typography>
