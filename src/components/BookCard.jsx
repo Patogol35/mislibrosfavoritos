@@ -41,8 +41,7 @@ sx={{
 maxWidth: 230,
 width: "100%",
 borderRadius: 3,
-background:
-"linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.4))",
+background: "linear-gradient(180deg, rgba(255,255,255,0.9), rgba(240,240,240,0.7))",
 boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
 border: "1px solid rgba(201,162,77,0.25)",
 display: "flex",
