@@ -172,3 +172,18 @@ HOVER LIBROS
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.6);
   }
+
+
+/* =========================
+SIGILO CENTRAL (ESTRELLA)
+========================= */
+.sigil-star::before {
+  content: "✶";
+  position: absolute;
+  font-size: 220px;
+  color: rgba(201,162,77,0.35);
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: sigilFloat 22s ease-in-out infinite;
+}
