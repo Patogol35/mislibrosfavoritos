@@ -24,9 +24,9 @@ export default function App({ mode, setMode }) {
       sx={{ pt: 10, pb: 14, position: "relative" }}
     >
       {/* SÍMBOLOS */}
-      <div className="sigil sigil-circle" />
-      <div className="sigil sigil-triangle" />
-      <div className="sigil sigil-star" />
+<div className="sigil sigil-circle" />
+<div className="sigil sigil-triangle" />
+<div className="sigil sigil-star">✶</div>
 
       {/* HEADER */}
       <Stack spacing={4} mb={8} alignItems="center">
