@@ -17,24 +17,18 @@ export default function App({ mode, setMode }) {
     <Container maxWidth="lg">
 
       {/* ICONO */}
-      <Box sx={{ textAlign: "center", mt: 4 }}>
+      <Box sx={{ textAlign: "center", mt: 5 }}>
         <AutoStoriesIcon
-          sx={{
-            fontSize: 42,
-            color: "primary.main",
-            opacity: 0.85,
-          }}
+          sx={{ fontSize: 40, color: "primary.main" }}
         />
       </Box>
 
       {/* TITULO */}
       <Typography
-        className="app-title"
         sx={{
           textAlign: "center",
           mt: 2,
           mb: 1,
-          color: "primary.main",
           fontSize: {
             xs: "1.25rem",
             sm: "1.6rem",
@@ -46,26 +40,24 @@ export default function App({ mode, setMode }) {
         Libros favoritos de Jorge Patricio Santamaría Cherrez
       </Typography>
 
-      {/* LINEA */}
+      {/* 👇 LA LINEA (AQUI SI SE VE) */}
       <div className="divider" />
 
       {/* DESCRIPCION */}
       <Typography
-        className="app-text"
         color="text.secondary"
         sx={{
-          maxWidth: 620,
+          maxWidth: 600,
           mx: "auto",
           textAlign: "center",
-          fontSize: "1.05rem",
         }}
         mb={6}
       >
         Esta es mi colección de libros favoritos: algunos ya los he leído,
-        otros están en proceso y algunos aún esperan ser descubiertos.
+        otros están en proceso y algunos aún están pendientes por leer.
       </Typography>
 
-      {/* TOGGLE MODO */}
+      {/* TOGGLE */}
       <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
         <IconButton
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -75,7 +67,6 @@ export default function App({ mode, setMode }) {
         </IconButton>
       </Box>
 
-      {/* LISTA */}
       <BookList books={initialBooks} />
     </Container>
   );
