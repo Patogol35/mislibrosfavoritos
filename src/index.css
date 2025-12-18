@@ -7,14 +7,12 @@ FUENTES
 VARIABLES
 ========================= */
 :root {
-  --black: #0a0a0a;
-  --deep-red: #420909;
-  --dark-red: #7a0c0c;
-  --aged-gold: #d4b678;
-  --parchment: #f7f1e1;
-  --text-light: #f8f6f3;
-  --text-dark: #1a1a1a;
-  --accent-shadow: rgba(0, 0, 0, 0.5);
+  --black: #050505;
+  --dark-red: #6b0f0f;
+  --deep-red: #3a0707;
+  --gold: #c9a24d;
+  --gold-soft: #e6cf8b;
+  --text-light: #f2f2f2;
 
   font-family: 'Cormorant Garamond', serif;
   line-height: 1.7;
@@ -22,29 +20,43 @@ VARIABLES
 }
 
 /* =========================
-BODY
+BODY – FONDO ANTIGUO
 ========================= */
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(107, 15, 15, 0.75),
+      var(--black) 70%
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.015),
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+
+  background-attachment: fixed;
   color: var(--text-light);
   text-rendering: optimizeLegibility;
-  background: radial-gradient(circle at top, var(--dark-red), var(--black) 75%);
-  background-attachment: fixed;
 }
 
 /* =========================
 LINKS
 ========================= */
 a {
-  color: var(--aged-gold);
+  color: var(--gold);
   text-decoration: none;
   letter-spacing: 0.05em;
 }
 
 a:hover {
-  color: #e7cf9e;
+  color: var(--gold-soft);
 }
 
 /* =========================
@@ -52,44 +64,14 @@ TÍTULOS
 ========================= */
 h1, h2, h3 {
   font-family: 'Cinzel', serif;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--aged-gold);
+  color: var(--gold-soft);
 }
 
 h1 {
-  font-size: 2.7rem;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  text-align: center;
-  text-shadow: 0 0 10px var(--accent-shadow);
-}
-
-/* =========================
-LÍNEA DIVISORIA
-========================= */
-.divider {
-  width: 140px;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--aged-gold), transparent);
-  margin: 25px auto 40px;
-  box-shadow: 0 0 10px var(--aged-gold);
-  opacity: 0.9;
-}
-
-/* =========================
-DESCRIPCIÓN
-========================= */
-.description {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  color: #f3f0e4;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 15px 25px;
-  border-radius: 8px;
+  font-size: 3rem;
+  line-height: 1.2;
 }
 
 /* =========================
@@ -97,8 +79,8 @@ BOTONES
 ========================= */
 button {
   background: transparent;
-  border: 1px solid var(--aged-gold);
-  color: var(--aged-gold);
+  border: 1px solid var(--gold);
+  color: var(--gold);
   padding: 14px 32px;
   font-family: 'Cinzel', serif;
   letter-spacing: 0.15em;
@@ -108,24 +90,34 @@ button {
 }
 
 button:hover {
-  background: var(--aged-gold);
+  background: var(--gold);
   color: var(--black);
-  box-shadow: 0 0 15px var(--aged-gold);
 }
 
 /* =========================
-LISTA DE LIBROS
+SEPARADOR MÍSTICO
 ========================= */
-.book-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(201, 162, 77, 0.2);
-  border-radius: 10px;
-  padding: 16px;
-  transition: all 0.3s ease;
+.divider {
+  width: 160px;
+  height: 2px;
+  margin: 48px auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--gold),
+    transparent
+  );
+  position: relative;
+  box-shadow: 0 0 14px rgba(201, 162, 77, 0.4);
 }
 
-.book-card:hover {
-  border-color: var(--aged-gold);
-  box-shadow: 0 0 15px rgba(201, 162, 77, 0.2);
-  transform: translateY(-4px);
+.divider::after {
+  content: "✦";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 1rem;
+  text-shadow: 0 0 8px rgba(201, 162, 77, 0.7);
 }
