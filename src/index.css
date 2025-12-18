@@ -12,6 +12,11 @@ body {
   padding: 0;
   max-width: 100%;
   overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* =========================
@@ -45,6 +50,7 @@ body.dark {
     );
   background-attachment: fixed;
   color: var(--text-light);
+  touch-action: manipulation;
 }
 
 /* =========================
@@ -62,6 +68,17 @@ body.light {
       transparent 6px
     );
   background-attachment: fixed;
+  touch-action: manipulation;
+}
+
+/* =========================
+FIX MÓVIL (IMPORTANTE)
+========================= */
+@media (max-width: 768px) {
+  body.dark,
+  body.light {
+    background-attachment: scroll;
+  }
 }
 
 /* =========================
@@ -175,13 +192,11 @@ DIVIDER
   box-shadow: 0 0 18px rgba(201, 162, 77, 0.6);
 }
 
-
-
 /* =========================
 SIGILO ILLUMINATI INFERIOR
 ========================= */
-
 .sigil-illuminati-bottom {
+  position: absolute;
   font-size: 160px;
   letter-spacing: -18px;
   color: var(--gold);
@@ -189,4 +204,5 @@ SIGILO ILLUMINATI INFERIOR
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%) rotate(180deg);
+  pointer-events: none;
 }
