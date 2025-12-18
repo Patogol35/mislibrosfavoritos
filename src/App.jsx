@@ -20,14 +20,14 @@ export default function App({ mode, setMode }) {
     <Container
       maxWidth="lg"
       className="container-paper reveal"
-      sx={{ pt: 8, pb: 12, position: "relative" }}
+      sx={{ pt: 8, pb: 12 }}
     >
       {/* SÍMBOLOS OCULTOS */}
       <div className="sigil sigil-circle" />
       <div className="sigil sigil-triangle" />
       <div className="sigil sigil-key" />
 
-      {/* HEADER – PORTADA */}
+      {/* HEADER */}
       <Stack spacing={3} mb={8} alignItems="center">
         <AutoStoriesIcon
           sx={{
@@ -93,7 +93,7 @@ export default function App({ mode, setMode }) {
         </IconButton>
       </Box>
 
-      {/* TEXTO LITERARIO */}
+      {/* TEXTO */}
       <Typography
         sx={{
           maxWidth: 680,
@@ -118,11 +118,9 @@ export default function App({ mode, setMode }) {
         historia oculta y secretos que aguardan ser descifrados.
       </Typography>
 
-      {/* SEPARADOR */}
       <div className="divider" />
 
-      {/* LISTA */}
       <BookList books={initialBooks} />
     </Container>
   );
-            }
+}
