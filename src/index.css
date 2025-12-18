@@ -28,7 +28,18 @@ body {
   min-height: 100vh;
 
   background:
-    radial-gradient(circle at top, var(--dark-red), var(--black) 70%);
+    radial-gradient(
+      circle at top,
+      rgba(122, 12, 12, 0.6),
+      var(--black) 70%
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 6px
+    );
 
   color: var(--text-light);
   text-rendering: optimizeLegibility;
@@ -41,6 +52,7 @@ a {
   color: var(--gold);
   text-decoration: none;
   letter-spacing: 0.05em;
+  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -50,11 +62,14 @@ a:hover {
 /* =========================
    TITULOS
 ========================= */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Cinzel', serif;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold-soft);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 h1 {
@@ -63,16 +78,30 @@ h1 {
 }
 
 /* =========================
+   TEXTO GENERAL
+========================= */
+p {
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+/* =========================
    BOTONES
 ========================= */
 button {
-  background: transparent;
+  background: linear-gradient(
+    to bottom,
+    rgba(201, 162, 77, 0.15),
+    rgba(0, 0, 0, 0.4)
+  );
   border: 1px solid var(--gold);
   color: var(--gold);
-  padding: 14px 32px;
+  padding: 14px 36px;
+
   font-family: 'Cinzel', serif;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -80,14 +109,51 @@ button {
 button:hover {
   background: var(--gold);
   color: var(--black);
+  box-shadow: 0 0 12px rgba(201, 162, 77, 0.6);
 }
 
 /* =========================
    SEPARADOR ELEGANTE
 ========================= */
 .divider {
-  width: 120px;
+  width: 140px;
   height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--gold),
+    transparent
+  );
+  margin: 50px auto;
+  position: relative;
+}
+
+.divider::after {
+  content: "✦";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+/* =========================
+   SCROLLBAR (detalle pro)
+========================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
   background: var(--gold);
-  margin: 40px auto;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-soft);
 }
