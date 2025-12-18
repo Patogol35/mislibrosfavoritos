@@ -33,25 +33,19 @@ export default function App({ mode, setMode }) {
       <div className="sigil sigil-triangle" />
       <div className="sigil sigil-star">✶</div>
 
-      {/* HEADER CON VELO */}
+      {/* HEADER CON PLACA OSCURA */}
       <Box
         sx={{
-          position: "relative",
           mb: 8,
-          px: 2,
           py: 4,
-          borderRadius: 3,
+          px: 3,
+          borderRadius: 2,
 
-          /* 🔥 VELO EDITORIAL */
+          /* 🔥 LA CLAVE */
           background:
             theme.palette.mode === "light"
-              ? "rgba(120, 90, 40, 0.18)"
+              ? "rgba(40, 30, 15, 0.55)"
               : "transparent",
-
-          backdropFilter:
-            theme.palette.mode === "light"
-              ? "blur(2px)"
-              : "none",
         }}
       >
         <Stack spacing={4} alignItems="center">
@@ -60,7 +54,6 @@ export default function App({ mode, setMode }) {
               fontSize: 60,
               color: "var(--gold)",
               filter: "drop-shadow(0 0 12px rgba(201,162,77,0.8))",
-              zIndex: 2,
             }}
           />
 
@@ -71,13 +64,11 @@ export default function App({ mode, setMode }) {
               textAlign: "center",
               fontSize: "0.85rem",
               letterSpacing: "0.28em",
-              color: "rgba(230,207,139,0.75)",
+              color: "rgba(230,207,139,0.85)",
               textTransform: "uppercase",
-              zIndex: 2,
-              textShadow:
-                theme.palette.mode === "light"
-                  ? "0 1px 6px rgba(60,40,10,0.6)"
-                  : "0 0 10px rgba(201,162,77,0.7)",
+
+              /* CONTRASTE DIRECTO */
+              textShadow: "0 2px 6px rgba(0,0,0,0.9)",
             }}
           >
             Jorge Patricio Santamaría Cherrez
@@ -85,7 +76,7 @@ export default function App({ mode, setMode }) {
         </Stack>
       </Box>
 
-      {/* BOTÓN CLARO / OSCURO */}
+      {/* BOTÓN */}
       <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
         <IconButton
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -108,7 +99,7 @@ export default function App({ mode, setMode }) {
         </IconButton>
       </Box>
 
-      {/* TEXTO DESCRIPTIVO */}
+      {/* TEXTO */}
       <Typography
         sx={{
           maxWidth: 700,
