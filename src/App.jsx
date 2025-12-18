@@ -14,18 +14,9 @@ import { initialBooks } from "./data/books";
 
 export default function App({ mode, setMode }) {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        py: 8,
-        background:
-          "radial-gradient(circle at top, #7a0c0c, #0b0b0b 70%)",
-        minHeight: "100vh",
-      }}
-    >
+    <Container maxWidth="lg">
       {/* HEADER */}
       <Stack spacing={4} mb={6}>
-        {/* TÍTULO */}
         <Stack
           direction="row"
           spacing={2}
@@ -33,36 +24,19 @@ export default function App({ mode, setMode }) {
           alignItems="center"
         >
           <AutoStoriesIcon
-            sx={{
-              fontSize: 36,
-              color: "#c9a24d",
-            }}
+            sx={{ fontSize: 36, color: "primary.main" }}
           />
-
-          <Typography
-            sx={{
-              fontFamily: "'Cinzel', serif",
-              letterSpacing: "0.25em",
-              textTransform: "uppercase",
-              color: "#e0c878",
-              fontSize: "1.8rem",
-            }}
-          >
+          <Typography variant="h4" color="primary">
             Mis libros favoritos
           </Typography>
         </Stack>
 
-        {/* TOGGLE DE TEMA */}
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
           <IconButton
             onClick={() =>
               setMode(mode === "light" ? "dark" : "light")
             }
-            sx={{
-              color: "#c9a24d",
-              border: "1px solid #c9a24d",
-              borderRadius: 0,
-            }}
+            color="primary"
           >
             {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
           </IconButton>
@@ -71,13 +45,11 @@ export default function App({ mode, setMode }) {
 
       {/* DESCRIPCIÓN */}
       <Typography
+        color="text.secondary"
         sx={{
           maxWidth: 600,
-          margin: "0 auto",
+          mx: "auto",
           textAlign: "center",
-          color: "#f5f5f5",
-          fontSize: "1.1rem",
-          letterSpacing: "0.04em",
         }}
         mb={6}
       >
@@ -85,16 +57,8 @@ export default function App({ mode, setMode }) {
         otros están en proceso y algunos aún están pendientes por leer.
       </Typography>
 
-      {/* DIVIDER */}
-      <Divider
-        sx={{
-          width: 120,
-          margin: "0 auto 48px",
-          borderColor: "#c9a24d",
-        }}
-      />
+      <Divider sx={{ width: 120, mx: "auto", mb: 6 }} />
 
-      {/* LISTA */}
       <BookList books={initialBooks} />
     </Container>
   );
