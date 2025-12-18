@@ -140,4 +140,4 @@ transform: "scale(1.08)",
 );
 }
 
-Cómo qurdaroa
+
