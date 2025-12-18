@@ -187,3 +187,17 @@ SIGILO OJO MÍSTICO
   left: 50%;
   transform: translateX(-50%) rotate(2deg);
 }
+
+/* =========================
+SIGILO ILLUMINATI INFERIOR
+========================= */
+
+.sigil-illuminati-bottom {
+  font-size: 160px;
+  letter-spacing: -18px;
+  color: var(--gold);
+  opacity: 0.1;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
