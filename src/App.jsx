@@ -18,6 +18,7 @@ import { initialBooks } from "./data/books";
 export default function App({ mode, setMode }) {
   const theme = useTheme();
 
+  // Conecta el modo (light / dark) con el body
   useEffect(() => {
     document.body.className = mode;
   }, [mode]);
@@ -33,50 +34,41 @@ export default function App({ mode, setMode }) {
       <div className="sigil sigil-triangle" />
       <div className="sigil sigil-star">✶</div>
 
-      {/* HEADER CON PLACA OSCURA */}
-      <Box
-        sx={{
-          mb: 8,
-          py: 4,
-          px: 3,
-          borderRadius: 2,
+      {/* HEADER */}
+      <Stack spacing={4} mb={8} alignItems="center">
+        <AutoStoriesIcon
+          sx={{
+            fontSize: 60,
+            color: "var(--gold)",
+            filter: "drop-shadow(0 0 12px rgba(201,162,77,0.8))",
+            zIndex: 2,
+          }}
+        />
 
-          /* 🔥 LA CLAVE */
-          background:
-            theme.palette.mode === "light"
-              ? "rgba(40, 30, 15, 0.55)"
-              : "transparent",
-        }}
-      >
-        <Stack spacing={4} alignItems="center">
-          <AutoStoriesIcon
-            sx={{
-              fontSize: 60,
-              color: "var(--gold)",
-              filter: "drop-shadow(0 0 12px rgba(201,162,77,0.8))",
-            }}
-          />
+        {/* TÍTULO */}
+        <AnimatedTitle text="Biblioteca Personal" />
 
-          <AnimatedTitle text="Biblioteca Personal" />
+        {/* NOMBRE */}
+        <Typography
+          sx={{
+            textAlign: "center",
+            fontSize: "0.85rem",
+            letterSpacing: "0.28em",
+            textTransform: "uppercase",
+            zIndex: 2,
 
-          <Typography
-            sx={{
-              textAlign: "center",
-              fontSize: "0.85rem",
-              letterSpacing: "0.28em",
-              color: "rgba(230,207,139,0.85)",
-              textTransform: "uppercase",
+            // 🔥 SOLO CAMBIA EL COLOR EN PERGAMINO
+            color:
+              theme.palette.mode === "light"
+                ? "#5a3b18" // tinta pergamino
+                : "rgba(230,207,139,0.75)",
+          }}
+        >
+          Jorge Patricio Santamaría Cherrez
+        </Typography>
+      </Stack>
 
-              /* CONTRASTE DIRECTO */
-              textShadow: "0 2px 6px rgba(0,0,0,0.9)",
-            }}
-          >
-            Jorge Patricio Santamaría Cherrez
-          </Typography>
-        </Stack>
-      </Box>
-
-      {/* BOTÓN */}
+      {/* BOTÓN MODO */}
       <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
         <IconButton
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -99,7 +91,7 @@ export default function App({ mode, setMode }) {
         </IconButton>
       </Box>
 
-      {/* TEXTO */}
+      {/* TEXTO DESCRIPTIVO */}
       <Typography
         sx={{
           maxWidth: 700,
@@ -122,6 +114,7 @@ export default function App({ mode, setMode }) {
 
       <div className="divider" />
 
+      {/* LISTA DE LIBROS */}
       <BookList books={initialBooks} />
     </Container>
   );
