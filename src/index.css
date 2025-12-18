@@ -104,12 +104,15 @@ SÍMBOLOS
 
 /* ⭐ SIGILO CENTRAL (FUNCIONA SIEMPRE) */
 .sigil-star {
+  position: absolute;
   font-size: 220px;
   color: var(--gold);
-  opacity: 0.18;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
+  opacity: 0.22;
+
+  top: 30%;
+  right: -90px;
+
+  animation: sigilFloat 22s ease-in-out infinite;
 }
 
 /* =========================
