@@ -17,7 +17,7 @@ export default function App({ mode, setMode }) {
   return (
     <Container maxWidth="lg">
       {/* HEADER */}
-      <Stack spacing={4} mb={6}>
+      <Stack spacing={4} mb={6} mt={6}>
         <Stack
           direction="row"
           spacing={2}
@@ -29,8 +29,9 @@ export default function App({ mode, setMode }) {
             sx={{ fontSize: 36, color: "primary.main" }}
           />
 
+          {/* 👇 H1 REAL (tu CSS vuelve a aplicar) */}
           <Typography
-            color="primary"
+            component="h1"
             sx={{
               textAlign: "center",
               fontSize: {
@@ -38,8 +39,6 @@ export default function App({ mode, setMode }) {
                 sm: "1.6rem",
                 md: "2rem",
               },
-              lineHeight: 1.3,
-              fontWeight: 600,
             }}
           >
             Libros favoritos de Jorge Patricio Santamaría Cherrez
@@ -64,11 +63,12 @@ export default function App({ mode, setMode }) {
 
       {/* DESCRIPCIÓN */}
       <Typography
-        color="text.secondary"
+        component="p"
         sx={{
           maxWidth: 600,
           mx: "auto",
           textAlign: "center",
+          color: "text.secondary",
         }}
         mb={6}
       >
