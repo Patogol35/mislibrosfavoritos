@@ -1,101 +1,71 @@
 /* =========================
-FUENTES
+   FUENTES
 ========================= */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@400;500&display=swap');
 
 /* =========================
-VARIABLES
+   VARIABLES
 ========================= */
 :root {
-  --black: #050505;
-  --dark-red: #6b0f0f;
-  --deep-red: #3a0707;
+  --black: #0b0b0b;
+  --dark-red: #7a0c0c;
   --gold: #c9a24d;
-  --gold-soft: #e6cf8b;
-  --text-light: #f2f2f2;
+  --gold-soft: #e0c878;
+  --text-light: #f5f5f5;
+  --parchment: #f3ecd8;
+  --parchment-dark: #e6dcc2;
 
   font-family: 'Cormorant Garamond', serif;
   line-height: 1.7;
-  font-weight: 400;
 }
 
 /* =========================
-BODY – FONDO ANTIGUO
+   BODY DARK (default)
 ========================= */
 body {
   margin: 0;
-  min-width: 320px;
   min-height: 100vh;
-
   background:
-    radial-gradient(
-      circle at top,
-      rgba(107, 15, 15, 0.75),
-      var(--black) 70%
-    ),
+    radial-gradient(circle at top, rgba(122,12,12,.5), var(--black) 70%),
     repeating-linear-gradient(
       45deg,
-      rgba(255, 255, 255, 0.015),
-      rgba(255, 255, 255, 0.015) 1px,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 1px,
       transparent 1px,
-      transparent 7px
+      transparent 6px
     );
-
-  background-attachment: fixed;
   color: var(--text-light);
-  text-rendering: optimizeLegibility;
 }
 
 /* =========================
-LINKS
+   BODY LIGHT (pergamino)
 ========================= */
-a {
-  color: var(--gold);
-  text-decoration: none;
-  letter-spacing: 0.05em;
-}
-
-a:hover {
-  color: var(--gold-soft);
+body.light-mode {
+  background:
+    radial-gradient(circle at top, #fff6dd, var(--parchment) 65%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.02),
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 8px
+    );
+  color: #2a1f14;
 }
 
 /* =========================
-TÍTULOS
+   TITULOS
 ========================= */
 h1, h2, h3 {
   font-family: 'Cinzel', serif;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold-soft);
-}
-
-h1 {
-  font-size: 3rem;
-  line-height: 1.2;
+  text-shadow: 0 2px 6px rgba(0,0,0,.6);
 }
 
 /* =========================
-BOTONES
-========================= */
-button {
-  background: transparent;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  padding: 14px 32px;
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background: var(--gold);
-  color: var(--black);
-}
-
-/* =========================
-SEPARADOR MÍSTICO
+   SEPARADOR ANIMADO
 ========================= */
 .divider {
   width: 160px;
@@ -108,7 +78,7 @@ SEPARADOR MÍSTICO
     transparent
   );
   position: relative;
-  box-shadow: 0 0 14px rgba(201, 162, 77, 0.4);
+  animation: glow 3s ease-in-out infinite;
 }
 
 .divider::after {
@@ -119,5 +89,10 @@ SEPARADOR MÍSTICO
   transform: translateX(-50%);
   color: var(--gold);
   font-size: 1rem;
-  text-shadow: 0 0 8px rgba(201, 162, 77, 0.7);
+}
+
+@keyframes glow {
+  0% { opacity: .6; }
+  50% { opacity: 1; }
+  100% { opacity: .6; }
 }
