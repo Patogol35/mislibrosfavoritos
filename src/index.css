@@ -1,10 +1,10 @@
 /* =========================
-   FUENTES
+FUENTES
 ========================= */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@400;500&display=swap');
 
 /* =========================
-   VARIABLES
+VARIABLES
 ========================= */
 :root {
   --black: #0b0b0b;
@@ -20,7 +20,7 @@
 }
 
 /* =========================
-   BODY
+BODY
 ========================= */
 body {
   margin: 0;
@@ -28,25 +28,14 @@ body {
   min-height: 100vh;
 
   background:
-    radial-gradient(
-      circle at top,
-      rgba(122, 12, 12, 0.6),
-      var(--black) 70%
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0.02) 1px,
-      transparent 1px,
-      transparent 6px
-    );
+    radial-gradient(circle at top, var(--dark-red), var(--black) 70%);
 
   color: var(--text-light);
   text-rendering: optimizeLegibility;
 }
 
 /* =========================
-   LINKS
+LINKS
 ========================= */
 a {
   color: var(--gold);
@@ -59,43 +48,33 @@ a:hover {
 }
 
 /* =========================
-   TITULOS
+TITULOS
 ========================= */
 h1,
 h2,
 h3 {
   font-family: 'Cinzel', serif;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold-soft);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.2;
 }
 
 /* =========================
-   TEXTO
-========================= */
-p {
-  font-size: 1.05rem;
-  opacity: 0.95;
-}
-
-/* =========================
-   BOTONES
+BOTONES
 ========================= */
 button {
-  background: linear-gradient(
-    to bottom,
-    rgba(201, 162, 77, 0.15),
-    rgba(0, 0, 0, 0.4)
-  );
+  background: transparent;
   border: 1px solid var(--gold);
   color: var(--gold);
-  padding: 14px 36px;
-
+  padding: 14px 32px;
   font-family: 'Cinzel', serif;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -103,32 +82,14 @@ button {
 button:hover {
   background: var(--gold);
   color: var(--black);
-  box-shadow: 0 0 12px rgba(201, 162, 77, 0.6);
 }
 
 /* =========================
-   🔧 SEPARADOR (ARREGLADO)
+SEPARADOR ELEGANTE
 ========================= */
 .divider {
-  width: 160px;
-  height: 2px;                /* antes 1px */
-  background: var(--gold);   /* antes muy transparente */
-  margin: 24px auto 32px;    /* asegura espacio */
-  opacity: 0.9;
-}
-
-/* =========================
-   SCROLLBAR
-========================= */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--black);
-}
-
-::-webkit-scrollbar-thumb {
+  width: 120px;
+  height: 1px;
   background: var(--gold);
-  border-radius: 4px;
+  margin: 40px auto;
 }
