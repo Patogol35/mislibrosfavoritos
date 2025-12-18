@@ -4,7 +4,6 @@ import {
   Stack,
   IconButton,
   Box,
-  useTheme,
 } from "@mui/material";
 
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
@@ -13,97 +12,81 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import BookList from "./components/BookList";
 import { initialBooks } from "./data/books";
 
-export default function App({ mode, setMode }) {
-  const theme = useTheme();
+/* FUNCIÓN TEXTO LETRA POR LETRA */
+const AnimatedText = ({ text, delay = 0 }) => (
+  <span className="reveal-text">
+    {text.split("").map((l, i) => (
+      <span
+        key={i}
+        style={{ animationDelay: `${delay + i * 0.05}s` }}
+      >
+        {l === " " ? "\u00A0" : l}
+      </span>
+    ))}
+  </span>
+);
 
+export default function App({ mode, setMode }) {
   return (
     <Container
       maxWidth="lg"
       className="container-paper reveal"
-      sx={{ pt: 8, pb: 12 }}
+      sx={{ pt: 10, pb: 14 }}
     >
       {/* SÍMBOLOS */}
       <div className="sigil sigil-circle" />
       <div className="sigil sigil-triangle" />
-      <div className="sigil sigil-star" />
-      <div className="sigil sigil-cross" />
+      <div className="sigil sigil-star">✶</div>
 
       {/* HEADER */}
-      <Stack
-        spacing={3}
-        mb={8}
-        alignItems="center"
-        justifyContent="center"
-        textAlign="center"
-        sx={{ position: "relative", zIndex: 2 }}
-      >
+      <Stack spacing={4} alignItems="center" mb={8}>
         <AutoStoriesIcon
           sx={{
-            fontSize: 60,
+            fontSize: 64,
             color: "var(--gold)",
-            filter: "drop-shadow(0 0 12px rgba(201,162,77,0.8))",
+            filter: "drop-shadow(0 0 12px rgba(201,162,77,.8))",
           }}
         />
 
-        <Typography
-          sx={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: { xs: "1.8rem", sm: "2.4rem", md: "3rem" },
-            letterSpacing: "0.35em",
-            textTransform: "uppercase",
-            color: "var(--gold-soft)",
-          }}
-        >
-          Biblioteca Personal
+        <Typography className="title" sx={{ fontSize: { xs: "1.8rem", md: "2.8rem" } }}>
+          <AnimatedText text="Biblioteca Personal" />
         </Typography>
 
         <Typography
-          sx={{
-            fontSize: "0.9rem",
-            letterSpacing: "0.25em",
-            opacity: 0.85,
-          }}
+          className="mystic-hover"
+          sx={{ letterSpacing: ".3em", fontSize: ".9rem" }}
         >
-          Jorge Patricio Santamaría Cherrez
+          <AnimatedText
+            text="Jorge Patricio Santamaría Cherrez"
+            delay={1}
+          />
         </Typography>
       </Stack>
 
       {/* BOTÓN */}
-      <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4, zIndex: 2 }}>
-        <IconButton
-          onClick={() => setMode(mode === "light" ? "dark" : "light")}
-          sx={{
-            border: "1px solid rgba(201,162,77,0.4)",
-          }}
-        >
-          <VisibilityIcon
-            sx={{
-              color: "var(--gold)",
-              transition: "transform .4s",
-              "&:hover": {
-                transform: "rotate(20deg) scale(1.2)",
-              },
-            }}
-          />
+      <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 5 }}>
+        <IconButton onClick={() => setMode(mode === "light" ? "dark" : "light")}>
+          <VisibilityIcon sx={{ color: "var(--gold)" }} />
         </IconButton>
       </Box>
 
       {/* TEXTO */}
       <Typography
+        className="mystic-hover"
         sx={{
           maxWidth: 700,
           mx: "auto",
           textAlign: "center",
           fontStyle: "italic",
-          fontSize: { xs: "1.05rem", sm: "1.2rem" },
+          letterSpacing: ".05em",
           lineHeight: 2,
-          opacity: 0.9,
-          zIndex: 2,
-          position: "relative",
         }}
+        mb={6}
       >
-        Una colección de libros donde la historia, los símbolos y los secretos
-        se entrelazan esperando ser revelados.
+        <AnimatedText
+          text="Una colección de libros que revelan símbolos, secretos y verdades ocultas."
+          delay={2}
+        />
       </Typography>
 
       <div className="divider" />
@@ -111,4 +94,4 @@ export default function App({ mode, setMode }) {
       <BookList books={initialBooks} />
     </Container>
   );
-}
+                                           }
