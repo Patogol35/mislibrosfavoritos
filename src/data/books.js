@@ -69,4 +69,18 @@ export const initialBooks = [
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766017422/images_3_ws82ip.jpg",
     status: "reading",
   },
+  {
+    id: 11,
+    title: "El enigma sagrado",
+    author: "Michael Baigent, Richard Leigh, Henry Lincoln",
+    image: "https://covers.openlibrary.org/b/id/8231856-L.jpg",
+    status: "unread",
+  },
+  {
+    id: 12,
+    title: "Solo para tus ojos",
+    author: "J. J. Benítez",
+    image: "https://covers.openlibrary.org/b/id/10909286-L.jpg",
+    status: "unread",
+  },
 ];
