@@ -4,7 +4,6 @@ import {
   Stack,
   IconButton,
   Box,
-  useTheme,
 } from "@mui/material";
 
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
@@ -14,13 +13,12 @@ import BookList from "./components/BookList";
 import { initialBooks } from "./data/books";
 
 export default function App({ mode, setMode }) {
-  const theme = useTheme();
-
   return (
     <Container maxWidth="lg" sx={{ pt: 6, pb: 10 }}>
       
       {/* HEADER */}
       <Stack spacing={4} mb={6}>
+        
         <Stack
           direction="row"
           spacing={2}
@@ -40,9 +38,9 @@ export default function App({ mode, setMode }) {
             sx={{
               textAlign: "center",
               fontSize: {
-                xs: "1.4rem",
-                sm: "1.9rem",
-                md: "2.3rem",
+                xs: "1.3rem",
+                sm: "1.8rem",
+                md: "2.2rem",
               },
               lineHeight: 1.4,
               fontWeight: 600,
@@ -76,23 +74,14 @@ export default function App({ mode, setMode }) {
         </Box>
       </Stack>
 
-      {/* DESCRIPCIÓN – MEJORADA */}
+      {/* DESCRIPCIÓN */}
       <Typography
         sx={{
-          maxWidth: 700,
+          maxWidth: 620,
           mx: "auto",
           textAlign: "center",
-          fontSize: {
-            xs: "1.05rem",
-            sm: "1.15rem",
-            md: "1.25rem",
-          },
-          lineHeight: 1.9,
-          letterSpacing: "0.04em",
-          color:
-            theme.palette.mode === "dark"
-              ? "rgba(245,245,245,0.9)"
-              : "rgba(40,40,40,0.85)",
+          color: "rgba(245,245,245,0.85)",
+          fontSize: "1.05rem",
         }}
         mb={4}
       >
@@ -105,6 +94,7 @@ export default function App({ mode, setMode }) {
 
       {/* LISTA */}
       <BookList books={initialBooks} />
+
     </Container>
   );
 }
