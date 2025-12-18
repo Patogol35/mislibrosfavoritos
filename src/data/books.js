@@ -67,6 +67,6 @@ export const initialBooks = [
     title: "El tatuador de Auschwitz",
     author: "Heather Morris",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766017422/images_3_ws82ip.jpg",
-    status: "read",
+    status: "unread",
   },
 ];
