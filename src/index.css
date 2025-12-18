@@ -121,14 +121,16 @@ SEPARADOR MÍSTICO
   font-size: 1rem;
   text-shadow: 0 0 8px rgba(201, 162, 77, 0.7);
 }
+
 /* =========================
 CONTENEDOR MANUSCRITO
 ========================= */
 .container-paper {
+  position: relative;
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(201, 162, 77, 0.25);
   backdrop-filter: blur(2px);
-  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.65);
   overflow: hidden;
 }
 
@@ -142,7 +144,7 @@ ANIMACIÓN REVELACIÓN
 @keyframes revealFade {
   from {
     opacity: 0;
-    transform: translateY(30px) scale(0.98);
+    transform: translateY(30px) scale(0.97);
   }
   to {
     opacity: 1;
@@ -157,8 +159,8 @@ SÍMBOLOS OCULTOS
   position: absolute;
   opacity: 0.06;
   pointer-events: none;
-  filter: blur(0.2px);
-  animation: sigilFloat 18s linear infinite;
+  animation: sigilFloat 20s ease-in-out infinite;
+  filter: blur(0.3px);
 }
 
 /* CÍRCULO */
@@ -167,8 +169,8 @@ SÍMBOLOS OCULTOS
   height: 280px;
   border: 2px solid var(--gold);
   border-radius: 50%;
-  top: 12%;
-  left: -80px;
+  top: 10%;
+  left: -90px;
 }
 
 /* TRIÁNGULO */
@@ -179,21 +181,19 @@ SÍMBOLOS OCULTOS
   border-right: 140px solid transparent;
   border-bottom: 240px solid var(--gold);
   top: 55%;
-  right: -100px;
+  right: -120px;
 }
 
-/* LLAVE / SÍMBOLO */
-.sigil-key {
+/* SIGILO CENTRAL */
+.sigil-key::before {
+  content: "✶";
+  position: absolute;
   font-size: 220px;
   color: var(--gold);
-  content: "✶";
+  opacity: 0.05;
   bottom: -40px;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.sigil-key::before {
-  content: "✶";
 }
 
 /* MOVIMIENTO SUTIL */
@@ -202,9 +202,9 @@ SÍMBOLOS OCULTOS
     transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translateY(-18px) rotate(4deg);
+    transform: translateY(-18px) rotate(3deg);
   }
   100% {
     transform: translateY(0) rotate(0deg);
   }
-}
+  }
