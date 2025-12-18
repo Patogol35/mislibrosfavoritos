@@ -5,10 +5,8 @@ const getTheme = (mode) =>
     palette: {
       mode,
       background: {
-        default:
-          mode === "dark" ? "#0b0b0b" : "#f5f5f5",
-        paper:
-          mode === "dark" ? "#120909" : "#ffffff",
+        default: mode === "dark" ? "#0b0b0b" : "#f5f5f5",
+        paper: mode === "dark" ? "#120909" : "#ffffff",
       },
       primary: {
         main: "#c9a24d", // dorado
@@ -17,10 +15,8 @@ const getTheme = (mode) =>
         main: "#7a0c0c", // rojo oscuro
       },
       text: {
-        primary:
-          mode === "dark" ? "#f5f5f5" : "#213547",
-        secondary:
-          mode === "dark" ? "#cfcfcf" : "#555555",
+        primary: mode === "dark" ? "#f5f5f5" : "#213547",
+        secondary: mode === "dark" ? "#cfcfcf" : "#555555",
       },
     },
 
@@ -36,10 +32,25 @@ const getTheme = (mode) =>
     },
 
     components: {
+      /* ===== FONDO GLOBAL (CLAVE) ===== */
+      MuiCssBaseline: {
+        styleOverrides: {
+          body: {
+            minHeight: "100vh",
+            transition: "background 0.4s ease",
+            backgroundColor:
+              mode === "dark" ? "#0b0b0b" : "#f5f5f5",
+            backgroundImage:
+              mode === "dark"
+                ? "radial-gradient(circle at top, #7a0c0c, #0b0b0b 70%)"
+                : "none",
+          },
+        },
+      },
+
       MuiContainer: {
         styleOverrides: {
           root: {
-            minHeight: "100vh",
             paddingTop: "64px",
             paddingBottom: "64px",
           },
