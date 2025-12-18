@@ -14,7 +14,6 @@ function Root() {
 
   return (
     <ThemeProvider theme={theme}>
-      {/* IMPORTANTE */}
       <CssBaseline enableColorScheme />
       <App mode={mode} setMode={setMode} />
     </ThemeProvider>
