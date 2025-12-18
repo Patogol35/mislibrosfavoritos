@@ -73,7 +73,7 @@ export const initialBooks = [
     id: 11,
     title: "El enigma sagrado",
     author: "Michael Baigent, Richard Leigh, Henry Lincoln",
-    image: "https://covers.openlibrary.org/b/id/8231856-L.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766030433/5b6a026d03a9d1e7c809342f8ec60094_cpvgqd.jpg",
     status: "unread",
   },
   {
