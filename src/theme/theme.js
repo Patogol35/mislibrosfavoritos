@@ -1,22 +1,68 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#90caf9",
+const getTheme = (mode) =>
+  createTheme({
+    palette: {
+      mode,
+      background: {
+        default:
+          mode === "dark" ? "#0b0b0b" : "#f5f5f5",
+        paper:
+          mode === "dark" ? "#120909" : "#ffffff",
+      },
+      primary: {
+        main: "#c9a24d", // dorado
+      },
+      secondary: {
+        main: "#7a0c0c", // rojo oscuro
+      },
+      text: {
+        primary:
+          mode === "dark" ? "#f5f5f5" : "#213547",
+        secondary:
+          mode === "dark" ? "#cfcfcf" : "#555555",
+      },
     },
-    secondary: {
-      main: "#f48fb1",
-    },
-    background: {
-      default: "#121212",
-      paper: "#1e1e1e",
-    },
-  },
-  shape: {
-    borderRadius: 16,
-  },
-});
 
-export default theme;
+    typography: {
+      fontFamily: "'Cormorant Garamond', serif",
+
+      h4: {
+        fontFamily: "'Cinzel', serif",
+        letterSpacing: "0.25em",
+        textTransform: "uppercase",
+        fontWeight: 500,
+      },
+    },
+
+    components: {
+      MuiContainer: {
+        styleOverrides: {
+          root: {
+            minHeight: "100vh",
+            paddingTop: "64px",
+            paddingBottom: "64px",
+          },
+        },
+      },
+
+      MuiDivider: {
+        styleOverrides: {
+          root: {
+            borderColor: "#c9a24d",
+          },
+        },
+      },
+
+      MuiIconButton: {
+        styleOverrides: {
+          root: {
+            border: "1px solid #c9a24d",
+            borderRadius: 0,
+          },
+        },
+      },
+    },
+  });
+
+export default getTheme;
