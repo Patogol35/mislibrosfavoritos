@@ -1,10 +1,10 @@
 import {
-Container,
-Typography,
-Stack,
-Divider,
-IconButton,
-Box,
+  Container,
+  Typography,
+  Stack,
+  Divider,
+  IconButton,
+  Box,
 } from "@mui/material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
@@ -13,69 +13,53 @@ import BookList from "./components/BookList";
 import { initialBooks } from "./data/books";
 
 export default function App({ mode, setMode }) {
-return (
-<Container maxWidth="lg">
-{/* HEADER */}
-<Stack spacing={4} mb={6}>
-<Stack
-direction="row"
-spacing={2}
-justifyContent="center"
-alignItems="center"
-sx={{ flexWrap: "wrap" }}   // 👈 mejora en móvil
->
-<AutoStoriesIcon
-sx={{ fontSize: 36, color: "primary.main" }}
-/>
+  return (
+    <Container maxWidth="lg" sx={{ py: 6 }}>
+      {/* HEADER */}
+      <Stack spacing={4} mb={6}>
+        <Stack
+          direction="row"
+          spacing={2}
+          justifyContent="center"
+          alignItems="center"
+          sx={{ flexWrap: "wrap" }}
+        >
+          <AutoStoriesIcon sx={{ fontSize: 38, color: "primary.main" }} />
 
-<Typography  
-        color="primary"  
-        sx={{  
-          textAlign: "center",  
-          fontSize: {  
-            xs: "1.25rem",  
-            sm: "1.6rem",  
-            md: "2rem",  
-          },  
-          lineHeight: 1.3,  
-          fontWeight: 600,  
-        }}  
-      >  
-        Libros favoritos de Jorge Patricio Santamaría Cherrez  
-      </Typography>  
-    </Stack>  
+          <Typography
+            variant="h1"
+            sx={{
+              textAlign: "center",
+              fontSize: { xs: "1.8rem", sm: "2.4rem", md: "2.8rem" },
+              color: "var(--aged-gold)",
+            }}
+          >
+            Libros favoritos de Jorge Patricio Santamaría Cherrez
+          </Typography>
+        </Stack>
 
-    {/* Toggle claro / oscuro */}  
-    <Box sx={{ display: "flex", justifyContent: "flex-end" }}>  
-      <IconButton  
-        onClick={() =>  
-          setMode(mode === "light" ? "dark" : "light")  
-        }  
-        color="primary"  
-      >  
-        {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}  
-      </IconButton>  
-    </Box>  
-  </Stack>  
+        {/* Toggle claro / oscuro */}
+        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <IconButton
+            onClick={() => setMode(mode === "light" ? "dark" : "light")}
+            color="primary"
+          >
+            {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+          </IconButton>
+        </Box>
+      </Stack>
 
-  {/* DESCRIPCIÓN */}  
-  <Typography  
-    color="text.secondary"  
-    sx={{  
-      maxWidth: 600,  
-      mx: "auto",  
-      textAlign: "center",  
-    }}  
-    mb={6}  
-  >  
-    Esta es mi colección de libros favoritos: algunos ya los he leído,  
-    otros están en proceso y algunos aún están pendientes por leer.  
-  </Typography>  
+      {/* DIVISOR */}
+      <div className="divider"></div>
 
-  <Divider sx={{ width: 120, mx: "auto", mb: 6 }} />  
+      {/* DESCRIPCIÓN */}
+      <Typography component="p" className="description" mb={6}>
+        Esta es mi colección de libros favoritos: algunos ya los he leído,
+        otros están en proceso y algunos aún esperan ser descubiertos.
+      </Typography>
 
-  <BookList books={initialBooks} />  
-</Container>
-
-);
+      {/* LIBROS */}
+      <BookList books={initialBooks} />
+    </Container>
+  );
 }
