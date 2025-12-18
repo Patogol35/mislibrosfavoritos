@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import getTheme from "./theme/theme";
+
+/* 🔴 ESTA LINEA ES LA CLAVE */
+import "./index.css";
 
 function Root() {
   const [mode, setMode] = React.useState("dark");
@@ -14,7 +18,7 @@ function Root() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline enableColorScheme />
+      <CssBaseline />
       <App mode={mode} setMode={setMode} />
     </ThemeProvider>
   );
