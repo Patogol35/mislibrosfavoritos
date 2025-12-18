@@ -5,7 +5,7 @@ import App from "./App";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import getTheme from "./theme/theme";
 
-/* 🔴 ESTA LINEA ES LA CLAVE */
+/* 🔑 IMPORTA TU CSS GLOBAL */
 import "./index.css";
 
 function Root() {
