@@ -9,13 +9,31 @@ import {
   Chip,
 } from "@mui/material";
 
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
+
 const statusConfig = {
-  unread: { label: "No leído", color: "default" },
-  reading: { label: "En proceso", color: "warning" },
-  read: { label: "Leído", color: "success" },
+  unread: {
+    label: "No leído",
+    color: "default",
+    icon: <HourglassEmptyIcon />,
+  },
+  reading: {
+    label: "En proceso",
+    color: "warning",
+    icon: <AutoStoriesIcon />,
+  },
+  read: {
+    label: "Leído",
+    color: "success",
+    icon: <CheckCircleIcon />,
+  },
 };
 
 export default function BookCard({ book }) {
+  const status = statusConfig[book.status];
+
   return (
     <Card
       sx={{
@@ -61,11 +79,12 @@ export default function BookCard({ book }) {
           {book.author}
         </Typography>
 
-        {/* Estado de lectura */}
+        {/* Estado de lectura con icono */}
         <Chip
           size="small"
-          label={statusConfig[book.status]?.label}
-          color={statusConfig[book.status]?.color}
+          icon={status.icon}
+          label={status.label}
+          color={status.color}
           sx={{ width: "fit-content" }}
         />
       </Stack>
