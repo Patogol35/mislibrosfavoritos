@@ -44,7 +44,7 @@ borderRadius: 3,
   background:
   theme.palette.mode === "light"
     ? "linear-gradient(180deg, rgba(255,255,255,0.85), rgba(230,230,230,0.85))"
-    : "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.4))";,
+    : "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.4))",
 boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
 border: "1px solid rgba(201,162,77,0.25)",
 display: "flex",
