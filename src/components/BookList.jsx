@@ -5,8 +5,11 @@ export default function BookList({ books }) {
   return (
     <Grid
       container
-      spacing={4}
+      spacing={5}
       justifyContent="center"
+      sx={{
+        mt: 2,
+      }}
     >
       {books.map((book) => (
         <Grid
@@ -16,7 +19,14 @@ export default function BookList({ books }) {
           sm={6}
           md={4}
           lg={3}
-          sx={{ display: "flex", justifyContent: "center" }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            transition: "transform 0.3s ease",
+            "&:hover": {
+              transform: "translateY(-6px)",
+            },
+          }}
         >
           <BookCard book={book} />
         </Grid>
