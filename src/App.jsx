@@ -18,7 +18,6 @@ import { initialBooks } from "./data/books";
 export default function App({ mode, setMode }) {
   const theme = useTheme();
 
-  // 🔥 ENLAZA EL MODO CON EL BODY (CLARO / OSCURO)
   useEffect(() => {
     document.body.className = mode;
   }, [mode]);
@@ -34,40 +33,57 @@ export default function App({ mode, setMode }) {
       <div className="sigil sigil-triangle" />
       <div className="sigil sigil-star">✶</div>
 
-      {/* HEADER */}
-      <Stack spacing={4} mb={8} alignItems="center">
-        <AutoStoriesIcon
-          sx={{
-            fontSize: 60,
-            color: "var(--gold)",
-            filter: "drop-shadow(0 0 12px rgba(201,162,77,0.8))",
-            zIndex: 2,
-          }}
-        />
+      {/* HEADER CON VELO */}
+      <Box
+        sx={{
+          position: "relative",
+          mb: 8,
+          px: 2,
+          py: 4,
+          borderRadius: 3,
 
-        {/* TÍTULO ANIMADO */}
-        <AnimatedTitle text="Biblioteca Personal" />
+          /* 🔥 VELO EDITORIAL */
+          background:
+            theme.palette.mode === "light"
+              ? "rgba(120, 90, 40, 0.18)"
+              : "transparent",
 
-        {/* NOMBRE */}
-        <Typography
-          sx={{
-            textAlign: "center",
-            fontSize: "0.85rem",
-            letterSpacing: "0.28em",
-            color: "rgba(230,207,139,0.75)",
-            textTransform: "uppercase",
-            zIndex: 2,
+          backdropFilter:
+            theme.palette.mode === "light"
+              ? "blur(2px)"
+              : "none",
+        }}
+      >
+        <Stack spacing={4} alignItems="center">
+          <AutoStoriesIcon
+            sx={{
+              fontSize: 60,
+              color: "var(--gold)",
+              filter: "drop-shadow(0 0 12px rgba(201,162,77,0.8))",
+              zIndex: 2,
+            }}
+          />
 
-            // 🔥 CONTRASTE EDITORIAL
-            textShadow:
-              theme.palette.mode === "light"
-                ? "0 1px 4px rgba(80,60,20,0.4)"
-                : "0 0 10px rgba(201,162,77,0.7)",
-          }}
-        >
-          Jorge Patricio Santamaría Cherrez
-        </Typography>
-      </Stack>
+          <AnimatedTitle text="Biblioteca Personal" />
+
+          <Typography
+            sx={{
+              textAlign: "center",
+              fontSize: "0.85rem",
+              letterSpacing: "0.28em",
+              color: "rgba(230,207,139,0.75)",
+              textTransform: "uppercase",
+              zIndex: 2,
+              textShadow:
+                theme.palette.mode === "light"
+                  ? "0 1px 6px rgba(60,40,10,0.6)"
+                  : "0 0 10px rgba(201,162,77,0.7)",
+            }}
+          >
+            Jorge Patricio Santamaría Cherrez
+          </Typography>
+        </Stack>
+      </Box>
 
       {/* BOTÓN CLARO / OSCURO */}
       <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
@@ -115,7 +131,6 @@ export default function App({ mode, setMode }) {
 
       <div className="divider" />
 
-      {/* LISTA DE LIBROS */}
       <BookList books={initialBooks} />
     </Container>
   );
