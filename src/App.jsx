@@ -33,6 +33,7 @@ export default function App({ mode, setMode }) {
       <div className="sigil sigil-circle" />
       <div className="sigil sigil-triangle" />
       <div className="sigil sigil-star">✶</div>
+      <div className="sigil sigil-eye">👁</div>
 
       {/* HEADER */}
       <Stack spacing={4} mb={8} alignItems="center">
