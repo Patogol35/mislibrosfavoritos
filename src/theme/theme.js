@@ -1,79 +1,40 @@
 import { createTheme } from "@mui/material/styles";
 
-const getTheme = (mode) =>
-  createTheme({
+export default function getTheme(mode) {
+  return createTheme({
     palette: {
       mode,
+      primary: {
+        main: mode === "dark" ? "#c9a24d" : "#7a0c0c",
+      },
       background: {
         default: mode === "dark" ? "#0b0b0b" : "#f5f5f5",
-        paper: mode === "dark" ? "#120909" : "#ffffff",
-      },
-      primary: {
-        main: "#c9a24d", // dorado
-      },
-      secondary: {
-        main: "#7a0c0c", // rojo oscuro
-      },
-      text: {
-        primary: mode === "dark" ? "#f5f5f5" : "#213547",
-        secondary: mode === "dark" ? "#cfcfcf" : "#555555",
+        paper: mode === "dark" ? "#121212" : "#ffffff",
       },
     },
-
     typography: {
       fontFamily: "'Cormorant Garamond', serif",
-
-      h4: {
+      h1: {
         fontFamily: "'Cinzel', serif",
-        letterSpacing: "0.25em",
-        textTransform: "uppercase",
-        fontWeight: 500,
+        letterSpacing: "0.12em",
+      },
+      h2: {
+        fontFamily: "'Cinzel', serif",
+        letterSpacing: "0.12em",
+      },
+      h3: {
+        fontFamily: "'Cinzel', serif",
+        letterSpacing: "0.12em",
       },
     },
-
     components: {
-      /* ===== FONDO GLOBAL (CLAVE) ===== */
       MuiCssBaseline: {
         styleOverrides: {
           body: {
-            minHeight: "100vh",
-            transition: "background 0.4s ease",
-            backgroundColor:
-              mode === "dark" ? "#0b0b0b" : "#f5f5f5",
-            backgroundImage:
-              mode === "dark"
-                ? "radial-gradient(circle at top, #7a0c0c, #0b0b0b 70%)"
-                : "none",
-          },
-        },
-      },
-
-      MuiContainer: {
-        styleOverrides: {
-          root: {
-            paddingTop: "64px",
-            paddingBottom: "64px",
-          },
-        },
-      },
-
-      MuiDivider: {
-        styleOverrides: {
-          root: {
-            borderColor: "#c9a24d",
-          },
-        },
-      },
-
-      MuiIconButton: {
-        styleOverrides: {
-          root: {
-            border: "1px solid #c9a24d",
-            borderRadius: 0,
+            transition: "background-color 0.3s ease",
           },
         },
       },
     },
   });
-
-export default getTheme;
+}
