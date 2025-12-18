@@ -175,18 +175,7 @@ DIVIDER
   box-shadow: 0 0 18px rgba(201, 162, 77, 0.6);
 }
 
-/* =========================
-SIGILO OJO MÍSTICO
-========================= */
 
-.sigil-eye {
-  font-size: 200px;
-  color: var(--gold);
-  opacity: 0.15;
-  top: 42%;
-  left: 50%;
-  transform: translateX(-50%) rotate(2deg);
-}
 
 /* =========================
 SIGILO ILLUMINATI INFERIOR
