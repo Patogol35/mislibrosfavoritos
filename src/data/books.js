@@ -4,14 +4,14 @@ export const initialBooks = [
     title: "El Último Secreto",
     author: "Dan Brown",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765840460/img20250909_16353238--1-_n8kosu.jpg",
-    status: "reading", // leído
+    status: "reading",
   },
   {
     id: 2,
     title: "Macara: Memorias de una Bandita Enfermedad",
     author: "Jefferson Pérez Aguachela",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765839617/62650_rkkxmf.jpg",
-    status: "read", // en proceso
+    status: "read",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ export const initialBooks = [
     title: "Origen",
     author: "Dan Brown",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896359/17195ac0d7401a2385e6a74bf26765d9_v731zc.jpg",
-    status: "read", // no leído
+    status: "read",
   },
   {
     id: 6,
@@ -48,23 +48,25 @@ export const initialBooks = [
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896359/fractales-el-coran_zj1ct9.png",
     status: "reading",
   },
-
   {
     id: 8,
     title: "Inferno",
     author: "Dan Brown",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896822/a75e95dfdd11cbba5efe4b66a08743fc_pb6xik.jpg",
-    status: "unread", // en proceso
+    status: "unread",
   },
-
-  
   {
     id: 9,
     title: "Ángeles y Demonios",
     author: "Dan Brown",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765901509/951cc489068b333ad760996628e8ee01_nmearx.jpg",
-    status: "read", // en proceso
+    status: "read",
+  },
+  {
+    id: 10,
+    title: "El tatuador de Auschwitz",
+    author: "Heather Morris",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766017422/images_3_ws82ip.jpg",
+    status: "read",
   },
 ];
-
-
