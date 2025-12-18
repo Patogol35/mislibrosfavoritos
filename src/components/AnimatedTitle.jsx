@@ -1,8 +1,9 @@
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function AnimatedTitle({ text }) {
   const [visibleCount, setVisibleCount] = useState(0);
+  const theme = useTheme();
 
   useEffect(() => {
     setVisibleCount(0);
@@ -31,6 +32,12 @@ export default function AnimatedTitle({ text }) {
         px: 2,
         whiteSpace: "normal",
         zIndex: 3,
+
+        /* 🔥 CONTRASTE EDITORIAL SEGÚN MODO */
+        textShadow:
+          theme.palette.mode === "light"
+            ? "0 2px 6px rgba(80,60,20,0.45)"
+            : "0 0 16px rgba(201,162,77,0.8)",
       }}
     >
       {text.split("").map((char, i) => (
