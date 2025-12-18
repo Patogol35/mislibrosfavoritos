@@ -5,7 +5,7 @@ export default function getTheme(mode) {
     palette: {
       mode,
       primary: {
-        main: mode === "dark" ? "#c9a24d" : "#7a0c0c",
+        main: "#c9a24d",
       },
       background: {
         default: mode === "dark" ? "#0b0b0b" : "#f5f5f5",
@@ -16,23 +16,38 @@ export default function getTheme(mode) {
       fontFamily: "'Cormorant Garamond', serif",
       h1: {
         fontFamily: "'Cinzel', serif",
-        letterSpacing: "0.12em",
       },
       h2: {
         fontFamily: "'Cinzel', serif",
-        letterSpacing: "0.12em",
       },
       h3: {
         fontFamily: "'Cinzel', serif",
-        letterSpacing: "0.12em",
       },
     },
     components: {
       MuiCssBaseline: {
         styleOverrides: {
-          body: {
-            transition: "background-color 0.3s ease",
-          },
+          body:
+            mode === "dark"
+              ? {
+                  background: `
+                    radial-gradient(
+                      circle at top,
+                      rgba(122, 12, 12, 0.6),
+                      #0b0b0b 70%
+                    ),
+                    repeating-linear-gradient(
+                      45deg,
+                      rgba(255, 255, 255, 0.02),
+                      rgba(255, 255, 255, 0.02) 1px,
+                      transparent 1px,
+                      transparent 6px
+                    )
+                  `,
+                }
+              : {
+                  background: "#f5f5f5",
+                },
         },
       },
     },
