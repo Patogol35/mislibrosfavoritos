@@ -18,7 +18,7 @@ import { initialBooks } from "./data/books";
 export default function App({ mode, setMode }) {
   const theme = useTheme();
 
-  // 🔥 CONEXIÓN REAL DEL MODO CON EL BODY
+  // 🔥 ENLAZA EL MODO CON EL BODY (CLARO / OSCURO)
   useEffect(() => {
     document.body.className = mode;
   }, [mode]);
@@ -45,8 +45,10 @@ export default function App({ mode, setMode }) {
           }}
         />
 
+        {/* TÍTULO ANIMADO */}
         <AnimatedTitle text="Biblioteca Personal" />
 
+        {/* NOMBRE */}
         <Typography
           sx={{
             textAlign: "center",
@@ -55,13 +57,19 @@ export default function App({ mode, setMode }) {
             color: "rgba(230,207,139,0.75)",
             textTransform: "uppercase",
             zIndex: 2,
+
+            // 🔥 CONTRASTE EDITORIAL
+            textShadow:
+              theme.palette.mode === "light"
+                ? "0 1px 4px rgba(80,60,20,0.4)"
+                : "0 0 10px rgba(201,162,77,0.7)",
           }}
         >
           Jorge Patricio Santamaría Cherrez
         </Typography>
       </Stack>
 
-      {/* BOTÓN MODO */}
+      {/* BOTÓN CLARO / OSCURO */}
       <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
         <IconButton
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -84,7 +92,7 @@ export default function App({ mode, setMode }) {
         </IconButton>
       </Box>
 
-      {/* TEXTO */}
+      {/* TEXTO DESCRIPTIVO */}
       <Typography
         sx={{
           maxWidth: 700,
@@ -107,7 +115,8 @@ export default function App({ mode, setMode }) {
 
       <div className="divider" />
 
+      {/* LISTA DE LIBROS */}
       <BookList books={initialBooks} />
     </Container>
   );
-    }
+}
