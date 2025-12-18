@@ -27,17 +27,17 @@ export default function AnimatedTitle({ text }) {
         fontFamily: "'Cinzel', serif",
         fontSize: { xs: "1.4rem", sm: "2.2rem", md: "2.8rem" },
         letterSpacing: { xs: "0.18em", sm: "0.28em", md: "0.35em" },
-        color: "var(--gold-soft)",
+
+        /* 🔥 CAMBIO CLAVE */
+        color:
+          theme.palette.mode === "light"
+            ? "#4a3214"   // tinta marrón oscura (pergamino)
+            : "var(--gold-soft)",
+
         textTransform: "uppercase",
         px: 2,
         whiteSpace: "normal",
         zIndex: 3,
-
-        /* 🔥 CONTRASTE EDITORIAL SEGÚN MODO */
-        textShadow:
-          theme.palette.mode === "light"
-            ? "0 2px 6px rgba(80,60,20,0.45)"
-            : "0 0 16px rgba(201,162,77,0.8)",
       }}
     >
       {text.split("").map((char, i) => (
