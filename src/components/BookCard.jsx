@@ -15,16 +15,22 @@ import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 const statusConfig = {
   unread: {
     label: "No leído",
+    bg: "#9e9e9e",          // plomo
+    border: "#bdbdbd",
     icon: <HourglassEmptyIcon />,
     animation: "none",
   },
   reading: {
     label: "En proceso",
+    bg: "#c9a24d",          // dorado
+    border: "#e6cf8b",
     icon: <AutoStoriesIcon />,
     animation: "pulse",
   },
   read: {
     label: "Leído",
+    bg: "#2e7d32",          // verde
+    border: "#66bb6a",
     icon: <CheckCircleIcon />,
     animation: "bounce",
   },
@@ -115,7 +121,7 @@ export default function BookCard({ book }) {
           {book.author}
         </Typography>
 
-        {/* Chip fijo (igual en claro / oscuro) */}
+        {/* Chip por estado (FIJO en ambos modos) */}
         <Chip
           size="small"
           icon={status.icon}
@@ -124,9 +130,9 @@ export default function BookCard({ book }) {
             width: "fit-content",
             mt: 1,
 
-            backgroundColor: "#c9a24d",
+            backgroundColor: status.bg,
             color: "#ffffff",
-            border: "1px solid rgba(201,162,77,0.9)",
+            border: `1px solid ${status.border}`,
 
             fontWeight: 500,
             letterSpacing: "0.04em",
