@@ -18,16 +18,19 @@ const statusConfig = {
     label: "No leído",
     color: "default",
     icon: <HourglassEmptyIcon />,
+    animation: "none",
   },
   reading: {
     label: "En proceso",
     color: "warning",
     icon: <AutoStoriesIcon />,
+    animation: "pulse",
   },
   read: {
     label: "Leído",
     color: "success",
     icon: <CheckCircleIcon />,
+    animation: "bounce",
   },
 };
 
@@ -79,13 +82,36 @@ export default function BookCard({ book }) {
           {book.author}
         </Typography>
 
-        {/* Estado de lectura con icono */}
+        {/* Estado con animación */}
         <Chip
           size="small"
           icon={status.icon}
           label={status.label}
           color={status.color}
-          sx={{ width: "fit-content" }}
+          sx={{
+            width: "fit-content",
+
+            /* Animaciones SOLO con MUI */
+            "@keyframes pulse": {
+              "0%": { opacity: 1 },
+              "50%": { opacity: 0.55 },
+              "100%": { opacity: 1 },
+            },
+            "@keyframes bounce": {
+              "0%": { transform: "scale(0.6)", opacity: 0 },
+              "60%": { transform: "scale(1.15)" },
+              "100%": { transform: "scale(1)", opacity: 1 },
+            },
+
+            "& .MuiChip-icon": {
+              animation:
+                status.animation === "pulse"
+                  ? "pulse 1.4s ease-in-out infinite"
+                  : status.animation === "bounce"
+                  ? "bounce 0.6s ease"
+                  : "none",
+            },
+          }}
         />
       </Stack>
     </Card>
