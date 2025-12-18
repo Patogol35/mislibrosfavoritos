@@ -1,9 +1,9 @@
 import {
   Container,
-  Typography,
   Stack,
   IconButton,
   Box,
+  Typography,
   useTheme,
 } from "@mui/material";
 
@@ -21,7 +21,7 @@ export default function App({ mode, setMode }) {
     <Container
       maxWidth="lg"
       className="container-paper reveal"
-      sx={{ pt: 10, pb: 12 }}
+      sx={{ pt: 10, pb: 14, position: "relative" }}
     >
       {/* SÍMBOLOS */}
       <div className="sigil sigil-circle" />
@@ -30,17 +30,25 @@ export default function App({ mode, setMode }) {
 
       {/* HEADER */}
       <Stack spacing={4} mb={8} alignItems="center">
-        <AutoStoriesIcon className="icon-hover" />
+        <AutoStoriesIcon
+          sx={{
+            fontSize: 60,
+            color: "var(--gold)",
+            filter: "drop-shadow(0 0 12px rgba(201,162,77,0.8))",
+            zIndex: 2,
+          }}
+        />
 
         <AnimatedTitle text="Biblioteca Personal" />
 
         <Typography
           sx={{
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            color: "rgba(230,207,139,0.75)",
-            fontSize: "0.9rem",
             textAlign: "center",
+            fontSize: "0.85rem",
+            letterSpacing: "0.28em",
+            color: "rgba(230,207,139,0.75)",
+            textTransform: "uppercase",
+            zIndex: 2,
           }}
         >
           Jorge Patricio Santamaría Cherrez
@@ -51,9 +59,22 @@ export default function App({ mode, setMode }) {
       <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
         <IconButton
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
-          className="icon-hover"
+          sx={{
+            border: "1px solid rgba(201,162,77,0.4)",
+            borderRadius: "50%",
+            p: 1.5,
+          }}
         >
-          <VisibilityIcon />
+          <VisibilityIcon
+            sx={{
+              color: "var(--gold)",
+              filter: "drop-shadow(0 0 8px rgba(201,162,77,0.7))",
+              transition: "transform 0.4s ease",
+              "&:hover": {
+                transform: "rotate(15deg) scale(1.2)",
+              },
+            }}
+          />
         </IconButton>
       </Box>
 
@@ -63,14 +84,19 @@ export default function App({ mode, setMode }) {
           maxWidth: 700,
           mx: "auto",
           textAlign: "center",
-          fontSize: "1.2rem",
-          fontStyle: "italic",
+          fontSize: { xs: "1.05rem", sm: "1.15rem", md: "1.25rem" },
           lineHeight: 2,
+          letterSpacing: "0.06em",
+          fontStyle: "italic",
+          color:
+            theme.palette.mode === "dark"
+              ? "rgba(245,245,245,0.88)"
+              : "rgba(40,40,40,0.85)",
+          mb: 6,
         }}
-        mb={6}
       >
-        Una colección de libros que revelan símbolos,
-        historia oculta y secretos por descifrar.
+        Una colección de libros que revelan símbolos, historia oculta y
+        secretos que aguardan ser descifrados.
       </Typography>
 
       <div className="divider" />
