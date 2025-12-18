@@ -14,24 +14,22 @@ import { initialBooks } from "./data/books";
 
 export default function App({ mode, setMode }) {
   return (
-    <Container maxWidth="lg">
-      {/* HEADER */}
-      <Stack spacing={4} mb={6}>
-        <Stack
-          direction="row"
-          spacing={2}
-          justifyContent="center"
-          alignItems="center"
-        >
-          <AutoStoriesIcon
-            sx={{ fontSize: 36, color: "primary.main" }}
-          />
-          <Typography variant="h4" color="primary">
-            Libros favoritos de Jorge Patricio Santamaría Cherrez
-          </Typography>
-        </Stack>
-
-        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+    <>
+      {/* HERO / HEADER */}
+      <Box
+        sx={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          px: 2,
+          position: "relative",
+        }}
+      >
+        {/* Toggle modo */}
+        <Box sx={{ position: "absolute", top: 16, right: 16 }}>
           <IconButton
             onClick={() =>
               setMode(mode === "light" ? "dark" : "light")
@@ -41,25 +39,49 @@ export default function App({ mode, setMode }) {
             {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
           </IconButton>
         </Box>
-      </Stack>
 
-      {/* DESCRIPCIÓN */}
-      <Typography
-        color="text.secondary"
-        sx={{
-          maxWidth: 600,
-          mx: "auto",
-          textAlign: "center",
-        }}
-        mb={6}
-      >
-        Esta es mi colección de libros favoritos: algunos ya los he leído,
-        otros están en proceso y algunos aún están pendientes por leer.
-      </Typography>
+        <Stack spacing={3} alignItems="center">
+          <AutoStoriesIcon
+            sx={{
+              fontSize: 48,
+              color: "primary.main",
+            }}
+          />
 
-      <Divider sx={{ width: 120, mx: "auto", mb: 6 }} />
+          <Typography
+            sx={{
+              fontFamily: "'Cinzel', serif",
+              letterSpacing: "0.25em",
+              textTransform: "uppercase",
+              fontWeight: 600,
+              fontSize: {
+                xs: "1.6rem",
+                sm: "2.2rem",
+                md: "2.8rem",
+              },
+            }}
+          >
+            Libros favoritos de Jorge Patricio Santamaría Cherrez
+          </Typography>
 
-      <BookList books={initialBooks} />
-    </Container>
+          <Divider sx={{ width: 100 }} />
+
+          <Typography
+            sx={{
+              maxWidth: 520,
+              opacity: 0.75,
+              fontStyle: "italic",
+            }}
+          >
+            Misterio · Historia · Conocimiento oculto
+          </Typography>
+        </Stack>
+      </Box>
+
+      {/* CONTENIDO */}
+      <Container maxWidth="lg">
+        <BookList books={initialBooks} />
+      </Container>
+    </>
   );
 }
