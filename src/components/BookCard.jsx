@@ -1,4 +1,4 @@
-  import {
+import {
   Card,
   CardMedia,
   Typography,
@@ -38,30 +38,21 @@ export default function BookCard({ book }) {
 
   return (
     <Card
-      sx={(theme) => ({
+      sx={{
         maxWidth: 230,
         width: "100%",
         borderRadius: 3,
-        background:
-          theme.palette.mode === "light"
-            ? "linear-gradient(180deg, rgba(255,255,255,1), rgba(250,250,250,1))"
-            : "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.4))",
-        boxShadow:
-          theme.palette.mode === "light"
-            ? "0 10px 20px rgba(0,0,0,0.15)"
-            : "0 10px 30px rgba(0,0,0,0.5)",
+        background: "linear-gradient(180deg, #ffffff, #f5f5f5)", // blanco sólido degradado
+        boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
         border: "1px solid rgba(201,162,77,0.25)",
         display: "flex",
         flexDirection: "column",
         transition: "all .35s ease",
         "&:hover": {
           transform: "translateY(-8px)",
-          boxShadow:
-            theme.palette.mode === "light"
-              ? "0 15px 35px rgba(0,0,0,0.2)"
-              : "0 20px 45px rgba(0,0,0,0.8)",
+          boxShadow: "0 15px 35px rgba(0,0,0,0.2)",
         },
-      })}
+      }}
     >
       {/* Imagen */}
       <Box
@@ -150,11 +141,9 @@ export default function BookCard({ book }) {
           sx={{
             mt: 1,
             color: "#fff", // letras blancas
-            backgroundColor:
-              theme.palette.mode === "light" ? "#1976d2" : "#90caf9",
+            backgroundColor: "#1976d2",
             "&:hover": {
-              backgroundColor:
-                theme.palette.mode === "light" ? "#1565c0" : "#64b5f6",
+              backgroundColor: "#1565c0",
             },
             textTransform: "none",
             fontWeight: 600,
@@ -165,4 +154,4 @@ export default function BookCard({ book }) {
       </Stack>
     </Card>
   );
-}
+          }
