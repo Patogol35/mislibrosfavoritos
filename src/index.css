@@ -178,40 +178,15 @@ DIVIDER
 
 
 /* =========================
-SIGILO ILLUMINATI (TRIÁNGULO + OJO)
+SIGILO ILLUMINATI INFERIOR
 ========================= */
 
-.sigil-illuminati {
-  position: absolute;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.22;
-
-  width: 0;
-  height: 0;
-
-  bottom: -100px;   /* extremo inferior */
-  left: -90px;      /* extremo lateral */
-
-  border-left: 130px solid transparent;
-  border-right: 130px solid transparent;
-  border-bottom: 230px solid var(--gold);
-
-  animation: sigilFloat 24s ease-in-out infinite;
-}
-
-/* 👁 OJO DENTRO DEL TRIÁNGULO */
-.sigil-illuminati::after {
-  content: "◉";
-  position: absolute;
-
-  bottom: -150px;          /* posiciona dentro del triángulo */
-  left: -18px;
-
-  font-size: 42px;
-  color: rgba(201, 162, 77, 0.9);
-
-  text-shadow:
-    0 0 8px rgba(201, 162, 77, 0.6),
-    0 0 16px rgba(201, 162, 77, 0.4);
+.sigil-illuminati-bottom {
+  font-size: 160px;
+  letter-spacing: -18px;
+  color: var(--gold);
+  opacity: 0.1;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
 }
