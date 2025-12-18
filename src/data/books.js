@@ -71,8 +71,8 @@ export const initialBooks = [
   },
   {
     id: 11,
-    title: "El enigma sagrado",
-    author: "Michael Baigent, Richard Leigh, Henry Lincoln",
+    title: "El Triángulo de las Bermudas",
+    author: "Charles Berlitz",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766030433/5b6a026d03a9d1e7c809342f8ec60094_cpvgqd.jpg",
     status: "unread",
   },
