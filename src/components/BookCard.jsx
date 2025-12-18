@@ -15,19 +15,16 @@ import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 const statusConfig = {
   unread: {
     label: "No leído",
-    color: "default",
     icon: <HourglassEmptyIcon />,
     animation: "none",
   },
   reading: {
     label: "En proceso",
-    color: "warning",
     icon: <AutoStoriesIcon />,
     animation: "pulse",
   },
   read: {
     label: "Leído",
-    color: "success",
     icon: <CheckCircleIcon />,
     animation: "bounce",
   },
@@ -71,13 +68,7 @@ export default function BookCard({ book }) {
       }}
     >
       {/* Imagen */}
-      <Box
-        sx={{
-          p: 2,
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+      <Box sx={{ p: 2, position: "relative", overflow: "hidden" }}>
         <CardMedia
           component="img"
           image={book.image}
@@ -124,26 +115,25 @@ export default function BookCard({ book }) {
           {book.author}
         </Typography>
 
-        {/* Estado */}
+        {/* Chip fijo (igual en claro / oscuro) */}
         <Chip
           size="small"
           icon={status.icon}
           label={status.label}
-          color={status.color}
           sx={{
             width: "fit-content",
             mt: 1,
-            backgroundColor: isDark
-              ? undefined
-              : "rgba(255,240,200,0.9)",
-            color: isDark ? undefined : "#3b2a14",
-            border: isDark
-              ? undefined
-              : "1px solid rgba(201,162,77,0.4)",
+
+            backgroundColor: "#c9a24d",
+            color: "#ffffff",
+            border: "1px solid rgba(201,162,77,0.9)",
+
+            fontWeight: 500,
+            letterSpacing: "0.04em",
 
             "@keyframes pulse": {
               "0%": { opacity: 1 },
-              "50%": { opacity: 0.55 },
+              "50%": { opacity: 0.6 },
               "100%": { opacity: 1 },
             },
             "@keyframes bounce": {
@@ -153,6 +143,7 @@ export default function BookCard({ book }) {
             },
 
             "& .MuiChip-icon": {
+              color: "#ffffff",
               animation:
                 status.animation === "pulse"
                   ? "pulse 1.4s ease-in-out infinite"
