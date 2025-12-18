@@ -4,26 +4,23 @@ import {
   Stack,
   IconButton,
   Box,
+  useTheme,
 } from "@mui/material";
+
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+
 import BookList from "./components/BookList";
 import { initialBooks } from "./data/books";
-import { useTheme } from "@mui/material/styles";
-import { useEffect } from "react";
 
 export default function App({ mode, setMode }) {
   const theme = useTheme();
 
-  useEffect(() => {
-    document.body.classList.toggle("light-mode", mode === "light");
-  }, [mode]);
-
   return (
-    <Container maxWidth="lg" sx={{ pt: 6 }}>
+    <Container maxWidth="lg" sx={{ pt: 6, pb: 10 }}>
+      
       {/* HEADER */}
-      <Stack spacing={3} mb={6}>
+      <Stack spacing={4} mb={6}>
         <Stack
           direction="row"
           spacing={2}
@@ -31,54 +28,83 @@ export default function App({ mode, setMode }) {
           alignItems="center"
           sx={{ flexWrap: "wrap" }}
         >
-          <AutoStoriesIcon sx={{ fontSize: 40, color: "primary.main" }} />
+          <AutoStoriesIcon
+            sx={{
+              fontSize: 40,
+              color: "var(--gold)",
+              filter: "drop-shadow(0 0 6px rgba(201,162,77,0.6))",
+            }}
+          />
 
           <Typography
             sx={{
               textAlign: "center",
+              fontSize: {
+                xs: "1.4rem",
+                sm: "1.9rem",
+                md: "2.3rem",
+              },
+              lineHeight: 1.4,
+              fontWeight: 600,
+              letterSpacing: "0.15em",
+              color: "var(--gold-soft)",
               fontFamily: "'Cinzel', serif",
-              letterSpacing: "0.18em",
-              fontSize: { xs: "1.4rem", md: "2rem" },
             }}
           >
             Libros favoritos de Jorge Patricio Santamaría Cherrez
           </Typography>
         </Stack>
 
-        {/* Separador */}
-        <div className="divider" />
-
-        {/* Toggle */}
+        {/* BOTÓN ILUMINATI */}
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <IconButton onClick={() => setMode(mode === "light" ? "dark" : "light")}>
-            {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+          <IconButton
+            onClick={() =>
+              setMode(mode === "light" ? "dark" : "light")
+            }
+          >
+            <VisibilityIcon
+              sx={{
+                color: "var(--gold)",
+                filter: "drop-shadow(0 0 8px rgba(201,162,77,0.7))",
+                transition: "transform 0.4s ease",
+                "&:hover": {
+                  transform: "scale(1.15)",
+                },
+              }}
+            />
           </IconButton>
         </Box>
       </Stack>
 
-      {/* DESCRIPCIÓN */}
+      {/* DESCRIPCIÓN – MEJORADA */}
       <Typography
         sx={{
-          maxWidth: 720,
+          maxWidth: 700,
           mx: "auto",
           textAlign: "center",
-          fontSize: { xs: "1.15rem", md: "1.35rem" },
+          fontSize: {
+            xs: "1.05rem",
+            sm: "1.15rem",
+            md: "1.25rem",
+          },
           lineHeight: 1.9,
           letterSpacing: "0.04em",
-          fontWeight: 500,
-          color: mode === "dark" ? "#f5f5f5" : "#2a1f14",
-          textShadow:
-            mode === "dark"
-              ? "0 2px 6px rgba(0,0,0,.6)"
-              : "0 1px 2px rgba(255,255,255,.6)",
+          color:
+            theme.palette.mode === "dark"
+              ? "rgba(245,245,245,0.9)"
+              : "rgba(40,40,40,0.85)",
         }}
-        mb={6}
+        mb={4}
       >
         Esta es mi colección de libros favoritos: algunos ya los he leído,
         otros están en proceso y algunos aún esperan ser descubiertos.
       </Typography>
 
+      {/* SEPARADOR */}
+      <div className="divider" />
+
+      {/* LISTA */}
       <BookList books={initialBooks} />
     </Container>
   );
-              }
+}
