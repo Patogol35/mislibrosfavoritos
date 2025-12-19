@@ -4,7 +4,7 @@ FUENTES
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@400;500&display=swap');
 
 /* =========================
-RESET
+RESET (FIX MÓVIL)
 ========================= */
 html,
 body {
@@ -12,7 +12,10 @@ body {
   padding: 0;
   max-width: 100%;
   overflow-x: hidden;
-  overscroll-behavior: none;
+
+  /* 🔥 CLAVE PARA PULL TO REFRESH */
+  overscroll-behavior-x: none; /* bloquea lateral */
+  overscroll-behavior-y: auto; /* permite refresh */
 }
 
 * {
@@ -50,7 +53,9 @@ body.dark {
     );
   background-attachment: fixed;
   color: var(--text-light);
-  touch-action: manipulation;
+
+  /* 🔥 IMPORTANTE */
+  touch-action: pan-y;
 }
 
 /* =========================
@@ -68,11 +73,13 @@ body.light {
       transparent 6px
     );
   background-attachment: fixed;
-  touch-action: manipulation;
+
+  /* 🔥 IMPORTANTE */
+  touch-action: pan-y;
 }
 
 /* =========================
-FIX MÓVIL (IMPORTANTE)
+FIX MÓVIL FONDOS FIJOS
 ========================= */
 @media (max-width: 768px) {
   body.dark,
@@ -156,8 +163,6 @@ SÍMBOLOS
   right: -100px;
 }
 
-
-
 @keyframes sigilFloat {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -199,4 +204,4 @@ SIGILO ILLUMINATI INFERIOR
   left: 50%;
   transform: translateX(-50%) rotate(180deg);
   pointer-events: none;
-}
+  }
