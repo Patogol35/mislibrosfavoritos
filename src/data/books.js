@@ -59,7 +59,7 @@ export const initialBooks = [
     id: 9,
     title: "Ángeles y Demonios",
     author: "Dan Brown",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765901509/951cc489068b333ad760996628e8ee01_nmearx.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766168224/Screenshot_2025-12-19-13-15-49-404-edit_com.miui.gallery_j5qsgo.jpg",
     status: "read",
   },
   {
