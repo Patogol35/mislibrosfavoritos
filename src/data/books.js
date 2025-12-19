@@ -71,9 +71,9 @@ export const initialBooks = [
   },
   {
     id: 11,
-    title: "El Principito",
-    author: "Antoine de Saint-Exupéry",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766111745/25677ffb6063b957dd09b467d594a246_pvenm2.png",
+    title: "1984",
+    author: "George Orwell",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766175444/Screenshot_2025-12-19-15-16-52-409-edit_com.miui.gallery_aahmct.jpg",
     status: "read",
   },
   {
