@@ -45,7 +45,7 @@ export const initialBooks = [
     id: 7,
     title: "El Corán",
     author: "Anónimo",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896359/fractales-el-coran_zj1ct9.png",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766174932/Screenshot_2025-12-19-15-07-11-842-edit_com.miui.gallery_b13eln.jpg",
     status: "reading",
   },
   {
