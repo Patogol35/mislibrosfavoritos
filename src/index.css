@@ -13,9 +13,9 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 
-  /* 🔥 CLAVE PARA PULL TO REFRESH */
-  overscroll-behavior-x: none; /* bloquea lateral */
-  overscroll-behavior-y: auto; /* permite refresh */
+  /* ✅ permite refresh y zoom */
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: auto;
 }
 
 * {
@@ -54,8 +54,8 @@ body.dark {
   background-attachment: fixed;
   color: var(--text-light);
 
-  /* 🔥 IMPORTANTE */
-  touch-action: pan-y;
+  /* ✅ CLAVE: NO bloquear zoom */
+  touch-action: auto;
 }
 
 /* =========================
@@ -74,8 +74,8 @@ body.light {
     );
   background-attachment: fixed;
 
-  /* 🔥 IMPORTANTE */
-  touch-action: pan-y;
+  /* ✅ CLAVE: NO bloquear zoom */
+  touch-action: auto;
 }
 
 /* =========================
@@ -204,4 +204,4 @@ SIGILO ILLUMINATI INFERIOR
   left: 50%;
   transform: translateX(-50%) rotate(180deg);
   pointer-events: none;
-  }
+}
