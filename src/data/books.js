@@ -3,7 +3,7 @@ export const initialBooks = [
     id: 1,
     title: "El Último Secreto",
     author: "Dan Brown",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765840460/img20250909_16353238--1-_n8kosu.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766167068/Screenshot_2025-12-19-12-32-30-379-edit_com.miui.gallery_jt4r5u.jpg",
     status: "reading",
   },
   {
