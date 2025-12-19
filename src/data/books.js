@@ -73,7 +73,7 @@ export const initialBooks = [
     id: 11,
     title: "El Principito",
     author: "Antoine de Saint-Exupéry",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766109999/el_principito_portada.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766111745/25677ffb6063b957dd09b467d594a246_pvenm2.png",
     status: "unread",
   },
   {
