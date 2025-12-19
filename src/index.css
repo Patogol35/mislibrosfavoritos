@@ -156,13 +156,7 @@ SÍMBOLOS
   right: -100px;
 }
 
-.sigil-star {
-  font-size: 220px;
-  color: var(--gold);
-  opacity: 0.22;
-  top: 30%;
-  right: -90px;
-}
+
 
 @keyframes sigilFloat {
   0% {
