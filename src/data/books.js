@@ -74,7 +74,7 @@ export const initialBooks = [
     title: "1984",
     author: "George Orwell",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766175444/Screenshot_2025-12-19-15-16-52-409-edit_com.miui.gallery_aahmct.jpg",
-    status: "read",
+    status: "unread",
   },
   {
     id: 12,
