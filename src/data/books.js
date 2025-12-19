@@ -31,7 +31,7 @@ export const initialBooks = [
     id: 5,
     title: "Origen",
     author: "Dan Brown",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896359/17195ac0d7401a2385e6a74bf26765d9_v731zc.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766171092/Screenshot_2025-12-19-14-03-42-775-edit_com.miui.gallery_zlg6xc.jpg",
     status: "read",
   },
   {
