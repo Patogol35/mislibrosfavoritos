@@ -52,7 +52,7 @@ export const initialBooks = [
     id: 8,
     title: "Inferno",
     author: "Dan Brown",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896822/a75e95dfdd11cbba5efe4b66a08743fc_pb6xik.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766174257/Screenshot_2025-12-19-14-57-06-286-edit_com.miui.gallery_nc6a5l.jpg",
     status: "unread",
   },
   {
