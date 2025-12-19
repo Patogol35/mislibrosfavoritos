@@ -25,7 +25,7 @@ export const initialBooks = [
     title: "El Símbolo Perdido",
     author: "Dan Brown",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765839418/images_yxpt4i.jpg",
-    status: "read",
+    status: "reading",
   },
   {
     id: 5,
