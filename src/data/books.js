@@ -80,7 +80,7 @@ export const initialBooks = [
     id: 12,
     title: "Solo para tus ojos",
     author: "J. J. Benítez",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766030561/dd56ff55ef5963add5e7c287b354852d_iz7orl.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766177289/Screenshot_2025-12-19-15-47-38-285-edit_com.miui.gallery_bgv3pn.jpg",
     status: "unread",
   },
 ];
