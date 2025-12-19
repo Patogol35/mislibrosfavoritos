@@ -32,7 +32,6 @@ export default function App({ mode, setMode }) {
       {/* SÍMBOLOS */}
       <div className="sigil sigil-circle" />
       <div className="sigil sigil-triangle" />
-      <div className="sigil sigil-star">✶</div>
       <div className="sigil sigil-illuminati-bottom">△👁</div>
       <div className="sigil sigil-illuminati" />
 
