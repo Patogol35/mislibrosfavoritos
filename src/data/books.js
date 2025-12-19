@@ -71,9 +71,9 @@ export const initialBooks = [
   },
   {
     id: 11,
-    title: "El Triángulo de las Bermudas",
-    author: "Charles Berlitz",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766100218/4771417_wrktx8.jpg",
+    title: "El Principito",
+    author: "Antoine de Saint-Exupéry",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766109999/el_principito_portada.jpg",
     status: "unread",
   },
   {
