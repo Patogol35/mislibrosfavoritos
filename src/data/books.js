@@ -17,7 +17,7 @@ export const initialBooks = [
     id: 3,
     title: "El Código Da Vinci",
     author: "Dan Brown",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765895453/176407_portada_el-codigo-da-vinci_dan-brown_201505260959_lxtte8.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766170576/Screenshot_2025-12-19-13-55-41-261-edit_com.miui.gallery_wb7tpp.jpg",
     status: "read",
   },
   {
