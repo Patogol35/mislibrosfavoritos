@@ -38,7 +38,7 @@ export const initialBooks = [
     id: 6,
     title: "El Kybalion",
     author: "Tres Iniciados",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1765896359/ca716ba2f89b018f2f93bb2916bfc792_uryikq.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766166489/Screenshot_2025-12-19-12-35-52-095-edit_com.miui.gallery_nqthjj.jpg",
     status: "read",
   },
   {
