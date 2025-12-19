@@ -10,7 +10,7 @@ export const initialBooks = [
     id: 2,
     title: "Macara: Memorias de una Bandita Enfermedad",
     author: "Jefferson Pérez Aguachela",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766167848/Screenshot_2025-12-19-13-10-24-240-edit_com.miui.gallery_n80ljb.jpg",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766168224/Screenshot_2025-12-19-13-16-28-841-edit_com.miui.gallery_cnoaub.jpg",
     status: "read",
   },
   {
