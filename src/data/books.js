@@ -6,13 +6,7 @@ export const initialBooks = [
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766167068/Screenshot_2025-12-19-12-32-30-379-edit_com.miui.gallery_jt4r5u.jpg",
     status: "reading",
   },
-  {
-    id: 2,
-    title: "Macara: Memorias de una Bandita Enfermedad",
-    author: "Jefferson Pérez Aguachela",
-    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766168224/Screenshot_2025-12-19-13-16-28-841-edit_com.miui.gallery_cnoaub.jpg",
-    status: "read",
-  },
+  
   {
     id: 3,
     title: "El Código Da Vinci",
@@ -54,6 +48,13 @@ export const initialBooks = [
     author: "Dan Brown",
     image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766174257/Screenshot_2025-12-19-14-57-06-286-edit_com.miui.gallery_nc6a5l.jpg",
     status: "unread",
+  },
+  {
+    id: 2,
+    title: "Macara: Memorias de una Bandita Enfermedad",
+    author: "Jefferson Pérez Aguachela",
+    image: "https://res.cloudinary.com/dqkwc0kf7/image/upload/v1766168224/Screenshot_2025-12-19-13-16-28-841-edit_com.miui.gallery_cnoaub.jpg",
+    status: "read",
   },
   {
     id: 9,
