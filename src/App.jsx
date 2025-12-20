@@ -36,38 +36,25 @@ export default function App({ mode, setMode }) {
       <div className="sigil sigil-illuminati" />
 
       {/* HEADER */}
-      <Stack spacing={4} mb={8} alignItems="center">
-        <AutoStoriesIcon
-          sx={{
-            fontSize: 60,
-            color: "var(--gold)",
-            filter: "drop-shadow(0 0 12px rgba(201,162,77,0.8))",
-            zIndex: 2,
-          }}
-        />
+<Stack spacing={4} mb={8} alignItems="center">
+  <AutoStoriesIcon
+    sx={{
+      fontSize: 60,
+      color: "var(--gold)",
+      filter: "drop-shadow(0 0 12px rgba(201,162,77,0.8))",
+      zIndex: 2,
+    }}
+  />
 
-        {/* TÍTULO */}
-        <AnimatedTitle text="Biblioteca Personal" />
+  {/* TÍTULO */}
+  <AnimatedTitle text="Biblioteca Personal" />
 
-        {/* NOMBRE */}
-        <Typography
-          sx={{
-            textAlign: "center",
-            fontSize: "0.85rem",
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            zIndex: 2,
-
-            // 🔥 SOLO CAMBIA EL COLOR EN PERGAMINO
-            color:
-              theme.palette.mode === "light"
-                ? "#5a3b18" // tinta pergamino
-                : "rgba(230,207,139,0.75)",
-          }}
-        >
-          Jorge Patricio Santamaría Cherrez
-        </Typography>
-      </Stack>
+  {/* AUTOR */}
+  <AnimatedTitle
+    text="Jorge Patricio Santamaría Cherrez"
+    variant="author"
+  />
+</Stack>
 
       {/* BOTÓN MODO */}
       <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
